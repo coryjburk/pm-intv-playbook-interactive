@@ -487,7 +487,7 @@
           <div class="pillset" id="catPills"><span class="grp-lbl">Topic</span></div>
           <div class="pillset" id="diffPills" style="margin-top:10px"><span class="grp-lbl">Level</span></div>
           <div class="filter-meta">
-            Showing <b id="shownCount">0</b> &middot; <b id="reviewedCount">0</b> reviewed
+            <span id="shownCount">0 questions matched</span> &middot; <b id="reviewedCount">0</b> reviewed
             <span class="clear" id="clearFilters">Reset filters</span>
             <span class="clear" id="expandToggle" style="color:var(--gold)">Expand all</span>
           </div>
@@ -718,7 +718,7 @@ const PM_QUESTIONS = [
   category: "Product Sense & Customer Empathy",
   difficulty: "Foundational",
   question: `What's the difference between what users say they want and what they actually need?`,
-  conversational: `Users are experts in their problems but not always in the solutions. They'll often ask for a specific feature — "give me a faster horse" — when the underlying need is "get me there faster." My job is to listen past the requested feature to the job behind it. So I dig into the why: what are they trying to accomplish, what happens if they can't, what are they doing today as a workaround. The workaround is usually the clearest signal of real, unmet need.`,
+  conversational: `I'll use a classic example attributed to Henry Ford — if he had asked customers what they wanted, they would have said "a faster horse." Users are experts in their problems but not always in the solutions. They'll often ask for a specific feature — a faster horse — when the underlying need is "get me there faster." My job is to listen past the requested feature to the job behind it. So I dig into the why: what are they trying to accomplish, what happens if they can't, what are they doing today as a workaround. The workaround is usually the clearest signal of real, unmet need.`,
   deepdive: `This is the classic stated-vs-revealed preference and the "faster horse" problem. The PM's job is to abstract from feature requests to the underlying job-to-be-done, because users optimize within the solution space they can imagine. Methods: ask "why" repeatedly, study workarounds and hacks (high-signal evidence of real pain), and weight behavior over opinion. But don't overcorrect into ignoring users — sometimes they're literally right. The discipline is separating the problem (trust the user) from the solution (trust the data and your design judgment). Validate the inferred need with a small experiment before committing.`,
   coaching: `Use a crisp example — the "faster horse" line or a real one from your experience. Emphasize that you trust users on the problem and the data on the solution. That nuance prevents you from sounding dismissive of customers.`,
   redFlag: `Building blindly whatever users request (feature factory) or arrogantly dismissing user input entirely. Both extremes signal weak judgment.`
@@ -745,7 +745,7 @@ const PM_QUESTIONS = [
 },
 {
   id: 10,
-  category: "Product Sense & Customer Empathy",
+  category: "Product Strategy",
   difficulty: "Core",
   question: `Pick a product with poor UX and explain how you'd fix it.`,
   conversational: `I'll use most airline booking flows. The core UX failure is that they optimize for upselling over the user's actual job — booking the right flight quickly — so the path is cluttered with interstitial add-on screens and dark patterns. I'd diagnose where users drop or hesitate using funnel and session data, then strip the critical path to its essentials and move ancillary offers to a single, honest review step. The principle is aligning the flow with the user's goal, because in the long run trust drives repeat booking and LTV.`,
@@ -778,7 +778,7 @@ const PM_QUESTIONS = [
   category: "Product Sense & Customer Empathy",
   difficulty: "Advanced",
   question: `Design a product that improves mental wellbeing without being addictive.`,
-  conversational: `This is interesting because the usual engagement playbook is exactly what I'd avoid — I don't want to maximize time-in-app, I want to maximize wellbeing outcomes, which may mean the product succeeds when usage goes down. So I'd define success as a wellbeing outcome metric, like validated mood improvement or completion of a helpful routine, not session length. The design would favor intentional, bounded sessions and gentle off-ramps over infinite feeds and notification loops. Essentially I'd invert the attention-economy incentives on purpose.`,
+  conversational: `This is interesting because the usual engagement playbook is exactly what I'd avoid — I don't want to maximize time-in-app, I want to maximize wellbeing outcomes, which may mean the product succeeds when usage goes down. So I'd define success as a wellbeing outcome outcome metric, like validated mood improvement or completion of a helpful routine, not session length. The design would favor intentional, bounded sessions and gentle off-ramps over infinite feeds and notification loops. Essentially I'd invert the attention-economy incentives on purpose.`,
   deepdive: `The core challenge is choosing a North Star that aligns with user welfare rather than engagement — "time well spent," not time spent. Candidate metrics: validated mood/anxiety scales over time, habit-completion of evidence-based practices, or self-reported wellbeing, with explicit anti-metrics (cap or de-emphasize daily session length). Borrow from behavioral design ethically: friction-by-design, natural stopping points, no variable-reward slot-machine loops. Tradeoffs are real: investor pressure rewards engagement and retention, so you need a business model (subscription, employer/insurer B2B) that pays for outcomes, not attention. Edge case: clinical risk — clear scope, safety routing, and not pretending to be therapy. This tests whether you'll resist dark patterns when incentives push toward them.`,
   coaching: `The whole answer hinges on rejecting engagement-as-goal and naming an outcome-based North Star plus anti-metrics. Connecting it to a business model that pays for outcomes shows you can make ethics commercially viable, not just aspirational.`,
   redFlag: `Applying standard engagement maximization (streaks, infinite scroll, push loops) to a wellbeing product, or having no business model that rewards outcomes over attention.`
@@ -809,7 +809,7 @@ const PM_QUESTIONS = [
   difficulty: "Core",
   question: `Should our company build, buy, or partner to enter a new market?`,
   conversational: `I'd decide based on three things: how core the capability is, how fast we need to move, and how much we'd differentiate by owning it. If the capability is core to our long-term moat and we have time, building gives us control and defensibility. If speed matters and the asset already exists at scale, buying or partnering gets us there faster. Partnering makes sense when the capability is valuable but not where we want to concentrate ownership or risk. I'd map our options against cost, time-to-market, strategic control, and integration risk.`,
-  deepdive: `Use a structured framework: assess strategic importance (is this a core differentiator or a commodity?), time-to-market urgency, build cost and opportunity cost, and integration/execution risk. Build when the capability is core and defensible and you can afford the time; buy when speed and existing scale matter and the target is integrable (but watch acquisition premiums and culture/integration failure rates); partner when you need a capability quickly without owning the risk, accepting less control and potential channel conflict. Layer in a real options view — a partnership can be a low-cost probe before committing to build or buy. Tie the recommendation to the company's specific assets, balance sheet, and where it must own the customer relationship.`,
+  deepdive: `Use a structured framework: assess strategic importance (is this a core differentiator or a commodity?), time-to-market urgency, build cost and opportunity cost, and integration/execution risk. Build when the capability is core and defensible and you can afford the time; buy when speed and existing scale matter and the target is integrable (but watch acquisition premiums and culture/integration failure rates); partner when you need a capability quickly without owning the risk, accepting less control and potential channel conflict. Layer in a real-options view — a partnership can be a low-cost probe before committing to build or buy. Tie the recommendation to the company's specific assets, balance sheet, and where it must own the customer relationship.`,
   coaching: `Lay out clear decision criteria before recommending — core-vs-commodity, speed, control, risk. A structured comparison beats a gut call. Mentioning integration risk and the option-value of partnering signals strategic maturity.`,
   redFlag: `Picking one option immediately with no criteria, ignoring integration/execution risk on "buy," or failing to tie the choice to the company's actual assets and moat.`
 },
@@ -1259,7 +1259,7 @@ const PM_REDFLAGS = [
     signals: [
       "Describes a waterfall handoff: writes a spec and 'throws it over the wall'.",
       "Positions self as the boss who assigns work to design/eng.",
-      "Resolves conflict by escalating or pulling rank rather than aligning."
+      "Resolves conflict by escalator or pulling rank rather than aligning."
     ],
     fix: "Show the product-trio model: co-create with design & eng early, bring problems not solutions. Influence via evidence and shared goals; escalation is a last resort."
   },
@@ -1332,22 +1332,6 @@ const PM_REDFLAGS = [
   var $ = function(s,el){ return (el||document).querySelector(s); };
   var $$ = function(s,el){ return Array.prototype.slice.call((el||document).querySelectorAll(s)); };
   function esc(str){ return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
-
-  function toast(msg){
-    var t=$("#toast"); $("#toastMsg").textContent=msg||"Copied";
-    t.classList.add("show"); clearTimeout(t._tm); t._tm=setTimeout(function(){t.classList.remove("show");},1900);
-  }
-  function copy(text){
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){toast("Copied to clipboard");},function(){fallbackCopy(text);});
-    } else { fallbackCopy(text); }
-  }
-  function fallbackCopy(text){
-    var ta=document.createElement("textarea"); ta.value=text; ta.style.position="fixed"; ta.style.opacity="0";
-    document.body.appendChild(ta); ta.select();
-    try{ document.execCommand("copy"); toast("Copied to clipboard"); }catch(e){ toast("Press Ctrl/Cmd+C to copy"); }
-    document.body.removeChild(ta);
-  }
 
   /* ---------- Build filter pills ---------- */
   function buildPills(){
@@ -1558,12 +1542,14 @@ const PM_REDFLAGS = [
       if (!localWebLlmEngine) {
         const webllmModule = await import("https://esm.run/@mlc-ai/web-llm");
         
-        // Safe property discovery mapping directly into lowercase API handler factory method
-        const initEngineFunc = webllmModule.createWebLLMEngine || 
-                               (webllmModule.default && webllmModule.default.createWebLLMEngine);
+        // CORRECTION: Safe property discovery mapping strictly into official capital-cased API handler factory method
+        const initEngineFunc = webllmModule.CreateMLCEngine || 
+                               (webllmModule.default && webllmModule.default.CreateMLCEngine) ||
+                               webllmModule.createMLCEngine ||
+                               (webllmModule.default && webllmModule.default.createMLCEngine);
                                
         if (!initEngineFunc) {
-          throw new Error("Could not map initialization hooks inside CDN runtime library context wrapper.");
+          throw new Error("Could not map standard CreateMLCEngine hooks inside CDN runtime library context wrapper.");
         }
         
         const modelIdentifier = "Qwen2.5-1.5B-Instruct-q4f16_1-MLC"; 
@@ -1748,6 +1734,7 @@ const PM_REDFLAGS = [
     };
   }
 
+  // FIXED: Removed conflicting internal out-of-scope variable references to fix the unhandled crash
   function updateProgress(){
     var total=PM_QUESTIONS.length;
     var n=Object.keys(reviewed).filter(function(k){return reviewed[k];}).length;
