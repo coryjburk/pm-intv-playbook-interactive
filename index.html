@@ -56,7 +56,7 @@
   }
   .brand .bt{font-family:var(--serif);font-size:17px;font-weight:600;letter-spacing:.2px;line-height:1.15}
   .brand .bs{font-size:11px;color:var(--text-faint);letter-spacing:.6px;text-transform:uppercase}
-  .topnav{display:flex;gap:4px;margin-left:auto;align-items:center}
+  .topnav{display:flex;gap:4px;margin-left:auto}
   .topnav a{
     padding:8px 14px;border-radius:8px;font-size:13.5px;font-weight:500;color:var(--text-dim);
     transition:.15s; white-space:nowrap;
@@ -293,10 +293,10 @@
     display: grid; grid-template-columns: 180px 1fr; gap: 16px; align-items: center; margin-bottom: 10px;
   }
   .grading-label { font-size: 13px; font-weight: 500; color: var(--text-dim); }
-  .grading-pills { display: flex; gap: 6px; }
+  .grading-pills { display: flex; gap: 4px; flex-wrap: wrap; }
   .grading-pill {
-    width: 32px; height: 30px; border: 1px solid var(--border); background: var(--bg-3);
-    color: var(--text-dim); border-radius: 6px; font-size: 12px; font-weight: 600;
+    width: 28px; height: 28px; border: 1px solid var(--border); background: var(--bg-3);
+    color: var(--text-dim); border-radius: 6px; font-size: 11px; font-weight: 600;
     display: grid; place-items: center; transition: 0.12s;
   }
   .grading-pill:hover { border-color: var(--border-2); color: #fff; }
@@ -358,8 +358,6 @@
   .reveal-tabs{display:flex;gap:4px;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:5px;margin-bottom:12px}
   .reveal-pane{display:none;font-size:14px;line-height:1.7;color:var(--text-dim);background:var(--bg-3);border-radius:10px;padding:15px 17px}
   .reveal-pane.active{display:block}
-  .tabpane.coaching{background:var(--green-dim);border-left:3px solid var(--green);padding:14px 16px;border-radius:0 9px 9px 0;color:#cfe9d4}
-  .tabpane.redflag{background:var(--red-dim);border-left:3px solid var(--red);padding:14px 16px;border-radius:0 9px 9px 0;color:#f3c9c9}
   .ai-box{background:var(--bg);border:1px dashed var(--border-2);border-radius:12px;padding:16px 18px;margin-top:16px}
   .ai-box .ai-lab{font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--gold);font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
   .ai-prompt{font-size:12.5px;line-height:1.6;color:var(--text-dim);background:var(--bg-2);border:1px solid var(--border);border-radius:9px;padding:13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;max-height:200px;overflow-y:auto;margin-bottom:11px}
@@ -444,10 +442,10 @@
     <aside class="side">
       <div class="side-group">
         <div class="side-label">Sections</div>
-        <a href="#questions" data-nav="questions" class="active">Question Bank <span class="sn" id="snQ">10</span></a>
-        <a href="#frameworks" data-nav="frameworks">Frameworks <span class="sn">1</span></a>
-        <a href="#battlecard" data-nav="battlecard">Battlecard <span class="sn">1</span></a>
-        <a href="#redflags" data-nav="redflags">Red Flags <span class="sn">1</span></a>
+        <a href="#questions" data-nav="questions" class="active">Question Bank <span class="sn" id="snQ">100</span></a>
+        <a href="#frameworks" data-nav="frameworks">Frameworks <span class="sn">10</span></a>
+        <a href="#battlecard" data-nav="battlecard">Battlecard <span class="sn">8</span></a>
+        <a href="#redflags" data-nav="redflags">Red Flags <span class="sn">10</span></a>
         <a href="#matrix" data-nav="matrix">Readiness Matrix</a>
         <a href="#coach" data-nav="coach">AI Coach</a>
       </div>
@@ -483,13 +481,13 @@
           <div class="search-row">
             <div class="search-box">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-              <input type="text" id="search" placeholder="Search questions&hellip;">
+              <input type="text" id="search" placeholder="Search 100 questions&hellip;">
             </div>
           </div>
           <div class="pillset" id="catPills"><span class="grp-lbl">Topic</span></div>
           <div class="pillset" id="diffPills" style="margin-top:10px"><span class="grp-lbl">Level</span></div>
           <div class="filter-meta">
-            Showing <b id="shownCount">10</b> of 10 &middot; <b id="reviewedCount">0</b> reviewed
+            Showing <b id="shownCount">100</b> of 100 &middot; <b id="reviewedCount">0</b> reviewed
             <span class="clear" id="clearFilters">Reset filters</span>
             <span class="clear" id="expandToggle" style="color:var(--gold)">Expand all</span>
           </div>
@@ -530,7 +528,7 @@
             Reset Matrix
           </button>
         </div>
-        <p class="sec-sub">Your performance tracking baseline across core delivery vectors. Practice questions in the voice studio, input your evaluations manually, or click down below to run 100% free offline AI hardware-accelerated grading.</p>
+        <p class="sec-sub">Your performance tracking baseline across core delivery vectors. Practice questions in the voice studio, input your evaluations manually, or click down below to run 100% free offline AI hardware-accelerated grading indexed on a senior 1-10 framework.</p>
         <div class="matrix-dashboard" id="matrixDashboard"></div>
       </section>
 
@@ -596,7 +594,7 @@
       <div class="modal-grading-section" id="modalGradingSection">
         <div class="grading-headline">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
-          Record Rubric Grades From Evaluation
+          Record Rubric Grades From Evaluation (Scale 1-10)
         </div>
         <div id="gradingRowsContainer"></div>
       </div>
@@ -650,6 +648,10 @@
 
 <div class="toast" id="toast"><span class="ck">&#10003;</span><span id="toastMsg">Copied</span></div>
 <script>
+/* ============================================================
+   PM_QUESTIONS — 100 Product Management interview questions
+   University of Utah — David Eccles School of Business
+   ============================================================ */
 const PM_QUESTIONS = [
 {
   id: 1,
@@ -716,7 +718,7 @@ const PM_QUESTIONS = [
   category: "Product Sense & Customer Empathy",
   difficulty: "Foundational",
   question: `What's the difference between what users say they want and what they actually need?`,
-  conversational: `Users are experts in their problems but not always in the solutions. They'll often ask for a specific feature — "give me a faster horse" — when the underlying need is "get me there faster." My job is to listen past the requested feature to the job behind it. So I dig into the why: what are they trying to accomplish, what happens if they can't, what are they doing today as a workaround. The workaround is usually the clearest signal of real, unmet need.`,
+  conversational: `I'll use a classic example attributed to Henry Ford — if he had asked customers what they wanted, they would have said "a faster horse." Users are experts in their problems but not always in the solutions. They'll often ask for a specific feature — a faster horse — when the underlying need is "get me there faster." My job is to listen past the requested feature to the job behind it. So I dig into the why: what are they trying to accomplish, what happens if they can't, what are they doing today as a workaround. The workaround is usually the clearest signal of real, unmet need.`,
   deepdive: `This is the classic stated-vs-revealed preference and the "faster horse" problem. The PM's job is to abstract from feature requests to the underlying job-to-be-done, because users optimize within the solution space they can imagine. Methods: ask "why" repeatedly, study workarounds and hacks (high-signal evidence of real pain), and weight behavior over opinion. But don't overcorrect into ignoring users — sometimes they're literally right. The discipline is separating the problem (trust the user) from the solution (trust the data and your design judgment). Validate the inferred need with a small experiment before committing.`,
   coaching: `Use a crisp example — the "faster horse" line or a real one from your experience. Emphasize that you trust users on the problem and the data on the solution. That nuance prevents you from sounding dismissive of customers.`,
   redFlag: `Either blindly building whatever users request (feature factory) or arrogantly dismissing user input entirely. Both extremes signal weak judgment.`
@@ -743,18 +745,185 @@ const PM_QUESTIONS = [
 },
 {
   id: 10,
-  category: "Product Sense & Customer Empathy",
+  category: "Product Design & User Experience",
   difficulty: "Core",
   question: `Pick a product with poor UX and explain how you'd fix it.`,
   conversational: `I'll use most airline booking flows. The core UX failure is that they optimize for upselling over the user's actual job — booking the right flight quickly — so the path is cluttered with interstitial add-on screens and dark patterns. I'd diagnose where users drop or hesitate using funnel and session data, then strip the critical path to its essentials and move ancillary offers to a single, honest review step. The principle is aligning the flow with the user's goal, because in the long run trust drives repeat booking and LTV.`,
   deepdive: `Diagnose before redesigning: instrument the funnel, find the highest-drop or highest-friction step, and run usability sessions to learn whether the problem is comprehension, navigation, or trust. Common culprits: too many steps, unclear hierarchy, dark patterns, poor error states. Tie the fix to a metric — completion rate, time-to-task, support contacts — and acknowledge the business tension: some "bad UX" exists because it boosts short-term revenue (forced upsells). The mature answer weighs short-term monetization against long-term trust and proposes an experiment to test whether a cleaner flow actually increases net revenue via higher conversion and retention.`,
   coaching: `Name the specific friction and the data you'd use to confirm it, not just "it's ugly." Acknowledging that some bad UX is an intentional revenue tradeoff — and proposing to test the cleaner version — shows commercial maturity.`,
   redFlag: `Critiquing aesthetics only ("the colors are bad"), redesigning from taste without data, or ignoring why the bad pattern might exist commercially.`
+},
+{
+  id: 11,
+  category: "Product Sense & Customer Empathy",
+  difficulty: "Foundational",
+  question: `How do you know if you've built something people actually want?`,
+  conversational: `The honest test is behavior over time, not launch-day buzz. The clearest signal is retention — do people come back and use it again without being prompted? I'd look at the retention curve flattening at a healthy level, organic word-of-mouth, and whether users would be genuinely disappointed if the product disappeared. Usage that decays to near-zero after the novelty wears off tells me I built something people tried, not something they wanted.`,
+  deepdive: `Product-market fit shows up in data and sentiment. Quantitatively: a retention curve that flattens (a stable cohort that keeps returning), strong week-over-week active usage, and organic/referral growth. Sean Ellis's PMF survey — the share of users who'd be "very disappointed" without the product, with ~40% as a rough benchmark — adds a sentiment read. Watch for vanity metrics: signups, downloads, and total users can all rise while engaged retention collapses. The deepest signal is unprompted, repeated use plus users pulling the product into workflows you didn't design. Triangulate signals; no single number proves fit.`,
+  coaching: `Lead with retention and the flattening curve — it's the metric that separates real demand from launch hype. Mentioning the "very disappointed" PMF survey adds rigor. Explicitly dismiss vanity metrics to show judgment.`,
+  redFlag: `Citing downloads, signups, or launch-day traffic as proof of demand, or having no concept of retention as the core PMF signal.`
+},
+{
+  id: 12,
+  category: "Product Sense & Customer Empathy",
+  difficulty: "Core",
+  question: `A user segment is churning faster than others. How do you investigate?`,
+  conversational: `I'd start by precisely defining the churning segment and confirming the pattern is real and not noise. Then I'd compare their journey to retained users — where do they diverge? Often the churn root is in early activation: they never reached the "aha" moment. I'd combine cohort retention curves with qualitative outreach to churned users to hear, in their words, what broke the value loop. The output I want is a specific, testable hypothesis about the moment value was lost, not just "they didn't like it."`,
+  deepdive: `Use a structured funnel-and-cohort approach: segment churners precisely, then decompose where they fall off versus retained cohorts — acquisition source, onboarding completion, time-to-first-value, feature adoption. Quantify with retention curves and correlate churn with specific behaviors (did they hit the activation milestone?). Layer qualitative signal: churn surveys, support tickets, win/loss-style interviews. Common roots: poor onboarding, wrong acquisition channel bringing low-intent users, a missing feature a competitor has, or pricing. Form a hypothesis, then design a targeted experiment (e.g., an onboarding nudge) and measure lift on the at-risk cohort. Watch for confounders like seasonality or a recent release.`,
+  coaching: `Show the funnel-decomposition instinct and pair numbers with talking to actual churned users. Ending on a specific, testable hypothesis and an experiment — rather than a vague conclusion — is what interviewers reward.`,
+  redFlag: `Guessing the cause without decomposing the funnel, relying only on data or only on opinions, or jumping to a fix before forming a hypothesis.`
+},
+{
+  id: 13,
+  category: "Product Sense & Customer Empathy",
+  difficulty: "Advanced",
+  question: `Design a product that improves mental wellbeing without being addictive.`,
+  conversational: `This is interesting because the usual engagement playbook is exactly what I'd avoid — I don't want to maximize time-in-app, I want to maximize wellbeing outcomes, which may mean the product succeeds when usage goes down. So I'd define success as a wellbeing outcome metric, like validated mood improvement or completion of a helpful routine, not session length. The design would favor intentional, bounded sessions and gentle off-ramps over infinite feeds and notification loops. Essentially I'd invert the attention-economy incentives on purpose.`,
+  deepdive: `The core challenge is choosing a North Star that aligns with user welfare rather than engagement — "time well spent," not time spent. Candidate metrics: validated mood/anxiety scales over time, habit-completion of evidence-based practices, or self-reported wellbeing, with explicit anti-metrics (cap or de-emphasize daily session length). Borrow from behavioral design ethically: friction-by-design, natural stopping points, no variable-reward slot-machine loops. Tradeoffs are real: investor pressure rewards engagement and retention, so you need a business model (subscription, employer/insurer B2B) that pays for outcomes, not attention. Edge case: clinical risk — clear scope, safety routing, and not pretending to be therapy. This tests whether you'll resist dark patterns when incentives push toward them.`,
+  coaching: `The whole answer hinges on rejecting engagement-as-goal and naming an outcome-based North Star plus anti-metrics. Connecting it to a business model that pays for outcomes shows you can make ethics commercially viable, not just aspirational.`,
+  redFlag: `Applying standard engagement maximization (streaks, infinite scroll, push loops) to a wellbeing product, or having no business model that rewards outcomes over attention.`
+},
+{
+  id: 14,
+  category: "Product Sense & Customer Empathy",
+  difficulty: "Core",
+  question: `How would you decide whether to build for power users or new users?`,
+  conversational: `I'd anchor the decision in strategy and the funnel, not preference. If activation and early retention are the bottleneck — lots of signups that never reach value — then investing in the new-user experience has the highest leverage. If the product is mature, growth is plateauing, and power users drive most of the revenue and word-of-mouth, then deepening their workflows protects the core. So I'd look at where the business is constrained and where each segment sits in lifetime value, then sequence accordingly rather than treating it as either/or forever.`,
+  deepdive: `Frame it as a portfolio and sequencing decision tied to the growth model. Diagnose the constraint: if the leaky step is activation, new-user investment compounds; if it's expansion/retention among high-value accounts, power-user depth wins. Quantifying with segment-level retention, LTV, and revenue concentration. The risk of over-serving power users is feature bloat that scares off newcomers (complexity creep); the risk of over-serving new users is a shallow product that can't retain. Mature answer: progressive disclosure can serve both — simple defaults for new users, depth available for power users — and you sequence based on the current binding constraint, revisiting as the funnel shifts.`,
+  coaching: `Refuse the false binary. Tie the choice to where the funnel is constrained and to LTV, and mention progressive disclosure as a way to serve both. That shows strategic prioritization rather than a gut preference.`,
+  redFlag: `Picking a side on instinct with no reference to the funnel, LTV, or business stage, or ignoring the complexity-creep risk of over-indexing on power users.`
+},
+{
+  id: 15,
+  category: "Product Strategy",
+  difficulty: "Foundational",
+  question: `What's the difference between product strategy and product vision?`,
+  conversational: `Vision is the long-term destination — the change in the world you're trying to create, often years out and largely unchanging. Strategy is the chosen path to get there given real constraints — which markets, which customers, in what sequence, and what you're deliberately not doing. So vision answers "where are we going and why does it matter," and strategy answers "how do we win, and what tradeoffs are we making." The roadmap is then the near-term expression of the strategy.`,
+  deepdive: `Think in a cascade: Vision (enduring aspiration) → Strategy (where to play and how to win, à la Lafley/Martin) → Roadmap (sequenced bets) → Execution. Vision is emotional and stable; strategy is analytical and involves explicit choices and sacrifices. A common failure is calling a feature list a "strategy" — strategy must say no to attractive options and articulate why this path beats alternatives given the company's assets and the market structure. Good strategy has a diagnosis, a guiding policy, and coherent actions (Rumelt). The vision motivates; the strategy allocates scarce resources and creates defensibility.`,
+  coaching: `Use the cascade language (vision → strategy → roadmap) and stress that strategy requires explicit tradeoffs and saying no. Interviewers want to hear that a roadmap is not a strategy.`,
+  redFlag: `Conflating the two, or describing "strategy" as a list of features with no diagnosis, no tradeoffs, and no theory of how you win.`
+},
+{
+  id: 16,
+  category: "Product Strategy",
+  difficulty: "Core",
+  question: `Should our company build, buy, or partner to enter a new market?`,
+  conversational: `I'd decide based on three things: how core the capability is, how fast we need to move, and how much we'd differentiate by owning it. If the capability is core to our long-term moat and we have time, building gives us control and defensibility. If speed matters and the asset already exists at scale, buying or partnering gets us there faster. Partnering makes sense when the capability is valuable but not where we want to concentrate ownership or risk. I'd map our options against cost, time-to-market, strategic control, and integration risk.`,
+  deepdive: `Use a structured framework: assess strategic importance (is this a core differentiator or a commodity?), time-to-market urgency, build cost and opportunity cost, and integration/execution risk. Build when the capability is core and defensible and you can afford the time; buy when speed and existing scale matter and the target is integrable (but watch acquisition premiums and culture/integration failure rates); partner when you need a capability quickly without owning the risk, accepting less control and potential channel conflict. Layer in a real-options view — a partnership can be a low-cost probe before committing to build or buy. Tie the recommendation to the company's specific assets, balance sheet, and where it must own the customer relationship.`,
+  coaching: `Lay out clear decision criteria before recommending — core-vs-commodity, speed, control, risk. A structured comparison beats a gut call. Mentioning integration risk and the option-value of partnering signals strategic maturity.`,
+  redFlag: `Picking one option immediately with no criteria, ignoring integration/execution risk on "buy," or failing to tie the choice to the company's actual assets and moat.`
+},
+{
+  id: 17,
+  category: "Product Strategy",
+  difficulty: "Advanced",
+  question: `A larger competitor just copied your core feature. What do you do?`,
+  conversational: `First, I'd stay calm and ask whether the feature was ever our real moat — if a competitor can copy it in a quarter, it wasn't defensible on its own. So I'd reframe: where is our durable advantage — data, network effects, brand, integration, speed of iteration? Then I'd respond on the dimension they can't easily match. Often the right move isn't to out-feature them but to deepen the things that compound over time. I'd also use the moment to learn what they validated, then move faster on the next thing.`,
+  deepdive: `Diagnose defensibility honestly: a feature is rarely a moat. Real moats are network effects, switching costs, economies of scale, proprietary data, and brand (Hamilton Helmer's "7 Powers"). If the copied feature drove differentiation, you've learned your moat is thin and must invest in compounding advantages. Strategic responses: out-execute on iteration speed, deepen integrations and switching costs, leverage data/network advantages a larger incumbent can't replicate, or reposition to a segment the giant under-serves. Avoid a feature arms race you can't win on resources. Use competitive intelligence to anticipate their next move. The senior insight: incumbents copying you can validate the market and even draw their attention away from where you'll actually win.`,
+  coaching: `Don't panic-build a counter-feature. Reframe around durable moats and where a big competitor structurally can't follow (speed, niche, data). Showing you understand defensibility beyond features is the differentiator here.`,
+  redFlag: `Reflexively starting a feature war against a better-resourced competitor, or believing a single feature was ever a sustainable moat.`
+},
+{
+  id: 18,
+  category: "Product Strategy",
+  difficulty: "Core",
+  question: `How do you think about a product's moat and defensibility?`,
+  conversational: `I think about what gets harder for a competitor to beat as we grow. The strongest moats compound with scale — network effects where each user makes the product more valuable, proprietary data that improves the experience, high switching costs from deep workflow integration, and economies of scale. I'd assess which of these we actually have versus aspire to, and then make roadmap decisions that deliberately deepen them, rather than just shipping features anyone could ship.`,
+  deepdive: `Map defensibility against a recognized framework — Helmer's 7 Powers (scale economies, network economies, counter-positioning, switching costs, branding, cornered resource, process power) or the simpler network-effects / switching-costs / brand / data trio. Distinguish moats that compound with scale (network effects, data) from those that don't. Counter-positioning is underrated: a business model an incumbent can't copy without cannibalizing itself. Translate this into strategy: prioritize features that increase switching costs or strengthen network density, and be skeptical of features that add value but no defensibility. Measure moat health via retention, net revenue retention, and reduced churn over time. A moat is a hypothesis you continuously stress-test.`,
+  coaching: `Name specific moat types and assess which the company genuinely has versus wishes it had. Connecting moat-building to roadmap prioritization — not just naming moats — shows you can operationalize strategy.`,
+  redFlag: `Treating "great UX" or "first-mover advantage" as durable moats, or being unable to connect defensibility to concrete roadmap choices.`
+},
+{
+  id: 19,
+  category: "Product Strategy",
+  difficulty: "Foundational",
+  question: `What is product-market fit and how do you know when you have it?`,
+  conversational: `Product-market fit is the point where you've built something a well-defined market clearly wants — demand pulls the product out of you rather than you pushing it. You feel it operationally: usage and retention grow without heroics, customers refer others, sales gets easier, and you're scrambling to keep up with demand rather than chasing it. Before PMF, every gain feels like pushing a boulder uphill; after, the market starts pulling.`,
+  deepdive: `PMF combines a sentiment and a behavioral definition. Marc Andreessen's qualitative version: you can feel it when the market pulls product out of the startup. Quantitatively: a retention curve that flattens at a healthy level for the target segment, strong organic growth, improving unit economics, and Sean Ellis's "40% would be very disappointed" survey. The discipline is defining the specific market segment — PMF is fit between a product and a particular market, not the world. Pre-PMF, focus on iterating toward the curve flattening; post-PMF, shift to scaling and growth loops. Beware false positives from a hot launch or a niche that won't scale.`,
+  coaching: `Give both the felt definition (market pulls) and the measurable one (retention flattening, the 40% survey). Specifying that PMF is fit with a defined segment — not everyone — shows precision.`,
+  redFlag: `Defining PMF only by signups, funding, or buzz, or treating it as a permanent milestone rather than fit with a specific market that must be re-earned at scale.`
+},
+{
+  id: 20,
+  category: "Product Strategy",
+  difficulty: "Advanced",
+  question: `How would you decide whether to expand into a new customer segment or deepen the current one?`,
+  conversational: `I'd weigh the marginal return of each against our current constraint. Deepening the existing segment is usually lower-risk and protects retention and expansion revenue, especially if there's still unmet need and headroom. Expanding to a new segment chases growth but risks splitting focus and diluting the product. I'd look at how saturated our core is, whether the new segment shares enough of the same core job to leverage our existing product, and whether our growth model is stalling. I'd lean toward deepening until the core shows clear saturation.`,
+  deepdive: `Frame via Ansoff (market penetration vs. market development) and the growth model. Deepening = penetration: higher win-probability, leverages existing PMF, grows net revenue retention; risk is hitting a ceiling. Expanding = new segment: larger TAM but you may need new PMF, new GTM, and product forks that fragment focus. Key diagnostics: is the core saturated (penetration rate, declining marginal CAC efficiency)? Does the new segment share the core JTBD so the product transfers? Sequencing usually favors dominating a beachhead before expanding (Moore's "Crossing the Chasm"). De-risk expansion with a contained pilot rather than a full pivot, and watch for resource cannibalization that weakens the profitable core.`,
+  coaching: `Tie it to saturation of the core and whether the new segment shares the same job. Defaulting to "dominate the beachhead first" unless the core is saturated is a credible, well-grounded stance interviewers respect.`,
+  redFlag: `Chasing a bigger TAM by expanding before the core is saturated, ignoring whether the new segment needs separate PMF/GTM, or proposing a full pivot with no pilot.`
+},
+{
+  id: 21,
+  category: "Product Strategy",
+  difficulty: "Core",
+  question: `Walk me through how you'd set strategy for a product with flat growth.`,
+  conversational: `I'd first diagnose where growth is actually stuck — is it acquisition, activation, retention, or monetization? Flat top-line growth usually hides a specific broken loop. Once I know the constraint, I'd form a strategy around fixing it: maybe our retention is fine but acquisition channels saturated, which is a distribution problem, not a product one. I'd pick the one or two highest-leverage bets, set a measurable goal, and sequence the roadmap around them rather than spreading effort thin across everything.`,
+  deepdive: `Start with diagnosis (Rumelt: good strategy begins with an honest diagnosis). Decompose growth into its loop: acquisition × activation × retention × referral × monetization. Flat growth often means a saturated acquisition channel masking healthy retention, or strong acquisition leaking out through poor retention. Identify the binding constraint, then choose a guiding policy and coherent actions targeting it — new growth loops (content, virality, sales-led), activation improvements, expansion revenue, or pricing. Set a North Star and supporting metrics, and avoid the trap of shipping unrelated features hoping something sticks. Validate the leading hypothesis with experiments before betting the roadmap. Consider whether the ceiling is the market itself, which would push toward new segments or products.`,
+  coaching: `Lead with diagnosis and decompose the growth equation before proposing anything. Naming the binding constraint and concentrating bets — rather than listing scattered features — is exactly the strategic discipline interviewers test for here.`,
+  redFlag: `Jumping to a feature list or "do more marketing" without decomposing the growth loop or identifying the binding constraint.`
+},
+{
+  id: 22,
+  category: "Product Strategy",
+  difficulty: "Core",
+  question: `How do you balance short-term revenue with long-term product health?`,
+  conversational: `I treat it as managing a portfolio and avoiding decisions that borrow from the future. Some short-term revenue moves — aggressive upsells, dark patterns, deprioritizing reliability — quietly accumulate as debt that shows up later as churn and eroded trust. So I'd protect a set of long-term-health metrics, like retention and trust, as guardrails, and only pursue short-term gains that don't degrade them. When there's genuine tension, I make the tradeoff explicit to stakeholders with the data, rather than letting short-term pressure win by default.`,
+  deepdive: `Frame it as guardrail metrics plus explicit tradeoff-making. Establish long-term health metrics (retention, NPS/trust, reliability, tech-debt indicators) as guardrails alongside revenue targets, so short-term wins that damage them are visible. Recognize that some revenue tactics are "borrowing from the future" — they inflate this quarter and depress LTV. Use a portfolio/horizon model (McKinsey's three horizons): protect core monetization while investing in future health. When forced to choose, quantify the long-term cost of the short-term gain and present the tradeoff to leadership rather than optimizing locally. The mature stance: most well-run short-term and long-term goals are aligned through retention; flag and resist the cases where they truly conflict.`,
+  coaching: `Introduce guardrail metrics so long-term health is measurable, not vague. Showing you'll make the tradeoff explicit to leadership — rather than silently sacrificing the future under pressure — signals integrity and seniority.`,
+  redFlag: `Always defaulting to short-term revenue, or claiming there's never a tradeoff. Both miss the nuance of protecting long-term health with explicit guardrails.`
+},
+{
+  id: 23,
+  category: "Product Strategy",
+  difficulty: "Advanced",
+  question: `When is it right to cannibalize your own successful product?`,
+  conversational: `It's right when the alternative is letting someone else cannibalize you. If a new model or technology is clearly going to disrupt our category, I'd rather we capture that transition than protect a declining cash cow until it collapses. The classic example is moving to a new platform or business model before the old one peaks. The discipline is being honest about whether the threat is real and imminent, and sequencing the transition so we don't kill a profitable product before the replacement can carry the business.`,
+  deepdive: `This is the innovator's dilemma (Christensen): incumbents under-invest in disruptive shifts because they threaten profitable core lines, and get displaced. Cannibalize proactively when a disruptive technology or model will erode your core regardless, and capturing the transition preserves the customer relationship and franchise (Netflix DVD→streaming, Apple iPod→iPhone). Counter-positioning logic applies: own the new model before a competitor forces it. The risk is mistimed cannibalization that destroys margin prematurely, so manage it as a sequenced transition with clear leading indicators of the shift, and sometimes a separate team/brand to avoid the core's antibodies. The judgment is distinguishing a genuine paradigm shift from a passing fad.`,
+  coaching: `Frame it explicitly through the innovator's dilemma and "cannibalize yourself before someone else does." Acknowledging timing risk and the need for clear shift indicators keeps you from sounding recklessly disruptive.`,
+  redFlag: `Either defending the cash cow at all costs (classic incumbent failure) or advocating reckless self-disruption with no evidence the shift is real or any transition sequencing.`
+},
+{
+  id: 24,
+  category: "Product Strategy",
+  difficulty: "Core",
+  question: `How do you evaluate whether a new feature fits your product strategy?`,
+  conversational: `I test it against three questions: does it serve our target customer's core job, does it strengthen or at least not dilute our differentiation, and does it move a metric tied to our strategic goal? If a feature is individually appealing but doesn't advance the strategy or deepen our moat, that's usually a no — it's scope creep dressed as opportunity. I'd rather have a roadmap that compounds toward one coherent bet than a pile of locally good features that don't add up to anything.`,
+  deepdive: `Use a strategic fit filter: alignment with vision/strategy, contribution to the North Star, reinforcement of differentiation/moat, and target-segment relevance. Apply opportunity-cost thinking — every yes is a no to something else — and a prioritization lens (RICE) for the survivors. Beware "good feature, wrong product": features that are valuable but pull the product toward a different positioning or audience, fragmenting focus. A strategy is as much about what you decline as what you build, so a strong PM can articulate why a tempting feature is off-strategy. Validate strategic-fit assumptions where uncertain, and use the framework to give stakeholders a defensible "no."`,
+  coaching: `Have an explicit fit filter (job, differentiation, metric) and be willing to say no to attractive-but-off-strategy features. Framing every yes as an opportunity cost shows strategic discipline rather than feature-collecting.`,
+  redFlag: `Evaluating features purely on whether they're individually good or popular, with no test for strategic fit, differentiation, or opportunity cost.`
+},
+{
+  id: 25,
+  category: "Product Strategy",
+  difficulty: "Foundational",
+  question: `What's the role of a product roadmap, and what makes a bad one?`,
+  conversational: `A roadmap is the near-term, sequenced expression of strategy — it communicates what we're solving and roughly when, aligning the team and stakeholders around priorities and the "why." A bad roadmap is just a feature list with hard dates and no rationale, treated as a promise rather than a plan. The worst ones are output-driven ("ship these 20 things") instead of outcome-driven ("move these metrics"), so they keep the team busy without ensuring they're solving the right problems.`,
+  deepdive: `A roadmap translates strategy into sequenced bets and a shared narrative; it's a communication and alignment tool, not a contract. Best practice is outcome- or theme-based roadmaps (now/next/later, or objectives-driven) over feature-and-date lists, because dated feature lists create false precision, invite over-commitment, and ignore learning. Bad roadmaps: feature factories with no problem statements, no prioritization rationale, no link to metrics or strategy, and rigidity that prevents responding to new information. Good ones state the problem/outcome, communicate confidence and time horizons honestly, and leave room to adapt. Tie items to OKRs so the roadmap is accountable to results, not activity.`,
+  coaching: `Stress outcome-driven over output-driven roadmaps and that a roadmap is a plan, not a promise. Naming the "feature factory with dates" failure mode shows you've seen how roadmaps go wrong in practice.`,
+  redFlag: `Describing a good roadmap as a fixed, dated list of features, or having no concept of outcome-based roadmapping and the danger of treating dates as promises.`
+},
+{
+  id: 26,
+  category: "Product Strategy",
+  difficulty: "Advanced",
+  question: `Our market is being commoditized. How do you respond strategically?`,
+  conversational: `Commoditization means our differentiation has eroded and we're competing on price, which is a losing game. So strategically I'd look to move up or around the commodity — bundle the core into a higher-value workflow or platform, build switching costs and integrations, or shift to a layer where we can still differentiate, like data, service, or a new job adjacent to the commoditized one. The goal is to escape the price war by changing what we're actually selling and where the value sits.`,
+  deepdive: `Commoditization compresses margins and erodes moats. Strategic responses: (1) move up the value chain — bundle the commodity into a platform/solution where you capture differentiated value; (2) integrate to raise switching costs and own the workflow; (3) shift the basis of competition to data, service, ecosystem, or brand; (4) vertical integration or owning an adjacent layer (the "smiling curve" — value migrates to the ends). Christensen's theory of where profit migrates (modularity vs. integration) is the lens: when the core modularizes, profit moves to adjacent integrated layers. Avoid competing on price unless you have a genuine cost advantage at scale. Validate which adjacent value the customer will actually pay for before repositioning.`,
+  coaching: `Refuse the price war and articulate how you change what you're selling — moving up-stack, bundling, owning the workflow. Referencing where profit migrates as markets modularize signals real strategic depth.`,
+  redFlag: `Responding to commoditization by cutting price without a cost advantage, or having no plan to re-establish differentiation through bundling, switching costs, or moving up the value chain.`
+},
+{
+  id: 27,
+  category: "Product Strategy",
+  difficulty: "Core",
+  question: `How do you size a market opportunity for a new product?`,
+  conversational: `I'd build it bottom-up rather than just quoting a big top-down number. Top-down gives the context — total category spend — but bottom-up is more credible: number of target customers we can realistically reach times the price they'd pay times expected adoption. I'd distinguish TAM, SAM, and SOM so I'm honest about the share we can actually serve and win near-term. And I'd pressure-test the willingness-to-pay assumption, because a huge TAM means nothing if the realistic obtainable market is tiny.`,
+  deepdive: `Use TAM (total addressable), SAM (serviceable addressable, given your model/geography), and SOM (serviceable obtainable, your realistic near-term share). Prefer a bottom-up build (target accounts × price × adoption rate) over a top-down "1% of a huge market" claim, which interviewers distrust. State assumptions explicitly and sanity-check with a second method (top-down or value-based: the dollar value of the problem you solve). Sizing isn't just current spend — for new categories, estimate latent demand and willingness-to-pay via the cost of the pain today. Tie sizing to strategy: a market can be large but unwinnable, or small but a dominable beachhead. Be transparent about uncertainty rather than precise-but-wrong.`,
+  coaching: `Show TAM/SAM/SOM and insist on a bottom-up build with explicit, testable assumptions. Sanity-checking with a second method and noting willingness-to-pay separates a credible estimate from a hand-wavy big number.`,
+  redFlag: `Quoting only a giant top-down TAM, claiming "we'll get 1% of a $50B market," or sizing with no stated assumptions or willingness-to-pay check.`
 }
 ];
-
-<script>
-
 
 const PM_FRAMEWORKS = [
   {
@@ -1226,6 +1395,7 @@ const PM_REDFLAGS = [
 
   function render(){
     var list=$("#qlist"); var data=filtered();
+    $("#snQ").textContent = PM_QUESTIONS.length;
     $("#shownCount").textContent=data.length;
     updateProgress();
     if(!data.length){
@@ -1386,10 +1556,8 @@ const PM_REDFLAGS = [
 
     try {
       if (!localWebLlmEngine) {
-        // Fetch library bundle asynchronously via CDN
         const webllmModule = await import("https://esm.run/@mlc-ai/web-llm");
         
-        // FIXED: Safely resolve namespace parsing structure across different browser engines
         const initEngineFunc = webllmModule.createWebLLMEngine || 
                                (webllmModule.default && webllmModule.default.createWebLLMEngine);
                                
@@ -1397,7 +1565,6 @@ const PM_REDFLAGS = [
           throw new Error("Could not map initialization hooks inside CDN runtime library context wrapper.");
         }
         
-        // Optimized 1.5B parameters (~1.2GB weight size) layout choice
         const modelIdentifier = "Qwen2.5-1.5B-Instruct-q4f16_1-MLC"; 
         
         localWebLlmEngine = await initEngineFunc(modelIdentifier, {
@@ -1584,7 +1751,6 @@ const PM_REDFLAGS = [
     var total=PM_QUESTIONS.length;
     var n=Object.keys(reviewed).filter(function(k){return reviewed[k];}).length;
     var pct=Math.round(n/total*100);
-    var sc = $("#shownCount"); if(sc) sc.textContent=data.length; // safe boundary fallback map
     var rc = $("#reviewedCount"); if(rc) rc.textContent=n;
     var pt=$("#progText"); if(pt) pt.textContent=n+" reviewed";
     var pp=$("#progPct"); if(pp) pp.textContent=pct+"%";
@@ -1850,7 +2016,6 @@ const PM_REDFLAGS = [
   renderRedFlags();
   renderMatrixDashboard();
   buildCoachOptions();
-  updateProgress();
   onScroll();
 })();
 </script>
