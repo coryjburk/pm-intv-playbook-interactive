@@ -1060,7 +1060,7 @@ const PM_REDFLAGS = [
         const webllmModule = await import("https://esm.run/@mlc-ai/web-llm");
         
         // Premium lightweight model selection offering low weight-sizes with excellent zero-shot parsing capabilities
-        const modelIdentifier = "Llama-3-8B-Instruct-q4f16_1-MLC"; 
+        const modelIdentifier = "Qwen2.5-1.5B-Instruct-q4f16_1-MLC"; 
         
         localWebLlmEngine = await webllmModule.CreateWebLLMEngine(modelIdentifier, {
           initProgressCallback: function(report) {
