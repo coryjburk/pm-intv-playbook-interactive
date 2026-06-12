@@ -218,7 +218,7 @@
 
   /* ---------- Battlecard ---------- */
   .bc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
-  .bc(background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:.18s}
+  .bc{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:.18s}
   .bc:hover{border-color:var(--red);transform:translateY(-2px);box-shadow:var(--shadow)}
   .bc-head{display:flex;align-items:center;gap:13px;margin-bottom:16px}
   .bc-ico{
@@ -700,7 +700,7 @@ const PM_QUESTIONS = [
   question: `Your favorite product is losing relevance with Gen Z. How do you diagnose and respond?`,
   conversational: `I'd resist redesigning anything until I understand the "why." First I'd quantify the decline — is it acquisition, activation, or retention falling, and specifically among under-25 cohorts? Then I'd go qualitative: talk to lapsed and never-adopted Gen Z users to learn what job they're now hiring a competitor for. Often it's not the feature set, it's the cultural fit and where attention has moved. Only then would I decide whether this is a positioning problem, a distribution problem, or a genuine product-market re-fit, because the response differs completely.`,
   deepdive: `Use a structured diagnosis: funnel decomposition (acquisition / activation / retention / referral) by cohort and age segment, paired with churn-reason and competitive-substitution research. Distinguish three root causes: distribution (you're not where their attention is), positioning (the value prop reads as "for older people"), and product (a competitor does the core job better). Each demands a different play — channel strategy, brand and messaging, or core experience investment. Beware the trap of chasing trends that alienate your profitable core; segment your response and consider a separate brand or surface rather than diluting the flagship. Validate with a contained experiment before a full pivot.`,
-  coaching: `Leads with diagnosis, not solutions. Interviewers want to see you isolate root cause across distribution, positioning, and product before spending resources — and that you won't sacrifice a loyal core to chase a new cohort blindly.`,
+  coaching: `Lead with diagnosis, not solutions. Interviewers want to see you isolate root cause across distribution, positioning, and product before spending resources — and that you won't sacrifice a loyal core to chase a new cohort blindly.`,
   redFlag: `Immediately proposing a redesign or "make it more TikTok-like" without diagnosing whether the problem is distribution, positioning, or product — and ignoring the risk to the existing core.`
 },
 {
@@ -809,7 +809,7 @@ const PM_QUESTIONS = [
   difficulty: "Core",
   question: `Should our company build, buy, or partner to enter a new market?`,
   conversational: `I'd decide based on three things: how core the capability is, how fast we need to move, and how much we'd differentiate by owning it. If the capability is core to our long-term moat and we have time, building gives us control and defensibility. If speed matters and the asset already exists at scale, buying or partnering gets us there faster. Partnering makes sense when the capability is valuable but not where we want to concentrate ownership or risk. I'd map our options against cost, time-to-market, strategic control, and integration risk.`,
-  deepdive: `Use a structured framework: assess strategic importance (is this a core differentiator or a commodity?), time-to-market urgency, build cost and opportunity cost, and integration/execution risk. Build when the capability is core and defensible and you can afford the time; buy when speed and existing scale matter and the target is integrable (but watch acquisition premiums and culture/integration failure rates); partner when you need a capability quickly without owning the risk, accepting less control and potential channel conflict. Layer in a real-options view — a partnership can be a low-cost probe before committing to build or buy. Tie the recommendation to the company's specific assets, balance sheet, and where it must own the customer relationship.`,
+  deepdive: `Use a structured framework: assess strategic importance (is this a core differentiator or a commodity?), time-to-market urgency, build cost and opportunity cost, and integration/execution risk. Build when the capability is core and defensible and you can afford the time; buy when speed and existing scale matter and the target is integrable (but watch acquisition premiums and culture/integration failure rates); partner when you need a capability quickly without owning the risk, accepting less control and potential channel conflict. Layer in a real options view — a partnership can be a low-cost probe before committing to build or buy. Tie the recommendation to the company's specific assets, balance sheet, and where it must own the customer relationship.`,
   coaching: `Lay out clear decision criteria before recommending — core-vs-commodity, speed, control, risk. A structured comparison beats a gut call. Mentioning integration risk and the option-value of partnering signals strategic maturity.`,
   redFlag: `Picking one option immediately with no criteria, ignoring integration/execution risk on "buy," or failing to tie the choice to the company's actual assets and moat.`
 },
@@ -1395,8 +1395,8 @@ const PM_REDFLAGS = [
 
   function render(){
     var list=$("#qlist"); var data=filtered();
-    $("#statTotalQs").textContent = PM_QUESTIONS.length;
-    $("#shownCount").textContent=data.length + " questions matched";
+    var statTotalQs = $("#statTotalQs"); if(statTotalQs) statTotalQs.textContent = PM_QUESTIONS.length;
+    var shownCount = $("#shownCount"); if(shownCount) shownCount.textContent = data.length + " questions matched";
     updateProgress();
     if(!data.length){
       list.innerHTML='<div class="empty"><div class="big">&#128270;</div><div>No questions match those filters.</div></div>';
@@ -1558,7 +1558,7 @@ const PM_REDFLAGS = [
       if (!localWebLlmEngine) {
         const webllmModule = await import("https://esm.run/@mlc-ai/web-llm");
         
-        // FIXED: Safe property discovery mapping directly into lowercase API handler factory method
+        // Safe property discovery mapping directly into lowercase API handler factory method
         const initEngineFunc = webllmModule.createWebLLMEngine || 
                                (webllmModule.default && webllmModule.default.createWebLLMEngine);
                                
