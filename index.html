@@ -218,7 +218,7 @@
 
   /* ---------- Battlecard ---------- */
   .bc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
-  .bc{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:.18s}
+  .bc(background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:.18s}
   .bc:hover{border-color:var(--red);transform:translateY(-2px);box-shadow:var(--shadow)}
   .bc-head{display:flex;align-items:center;gap:13px;margin-bottom:16px}
   .bc-ico{
@@ -248,7 +248,7 @@
   .rf-fix .lab::before{content:"\2713";color:var(--green)}
   .rf-fix p{font-size:13.5px;color:var(--text-dim);line-height:1.6}
 
-  /* ---------- Readiness Matrix Dashboard CSS ---------- */
+  /* ---------- Readiness Matrix Dashboard ---------- */
   .matrix-dashboard {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -442,7 +442,7 @@
     <aside class="side">
       <div class="side-group">
         <div class="side-label">Sections</div>
-        <a href="#questions" data-nav="questions" class="active">Question Bank <span class="sn" id="snQ">100</span></a>
+        <a href="#questions" data-nav="questions" class="active">Question Bank <span class="sn" id="snQ">27</span></a>
         <a href="#frameworks" data-nav="frameworks">Frameworks <span class="sn">10</span></a>
         <a href="#battlecard" data-nav="battlecard">Battlecard <span class="sn">8</span></a>
         <a href="#redflags" data-nav="redflags">Red Flags <span class="sn">10</span></a>
@@ -459,9 +459,9 @@
       <div class="hero">
         <span class="eyebrow">University of Utah &middot; David Eccles School of Business</span>
         <h1>The Product Management<br><span class="accent">Interview Playbook</span></h1>
-        <p class="lede">A complete prep system for landing the PM offer: 100 real interview questions with model answers, the 10 frameworks you'll be expected to wield, a final-round battlecard, the red flags that sink candidates, and a voice-powered practice studio.</p>
+        <p class="lede">A complete prep system for landing the PM offer: real interview questions with model answers, essential frameworks, a final-round battlecard, the red flags that sink candidates, and an offline voice-powered practice studio.</p>
         <div class="stats">
-          <div class="stat"><div class="num">100</div><div class="lbl">Interview questions</div></div>
+          <div class="stat"><div class="num" id="statTotalQs">27</div><div class="lbl">Interview questions</div></div>
           <div class="stat"><div class="num">8</div><div class="lbl">Question categories</div></div>
           <div class="stat gold"><div class="num">10</div><div class="lbl">PM frameworks</div></div>
           <div class="stat gold"><div class="num">6</div><div class="lbl">Core Rubrics</div></div>
@@ -481,13 +481,13 @@
           <div class="search-row">
             <div class="search-box">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-              <input type="text" id="search" placeholder="Search 100 questions&hellip;">
+              <input type="text" id="search" placeholder="Search questions&hellip;">
             </div>
           </div>
           <div class="pillset" id="catPills"><span class="grp-lbl">Topic</span></div>
           <div class="pillset" id="diffPills" style="margin-top:10px"><span class="grp-lbl">Level</span></div>
           <div class="filter-meta">
-            Showing <b id="shownCount">100</b> of 100 &middot; <b id="reviewedCount">0</b> reviewed
+            Showing <b id="shownCount">0</b> &middot; <b id="reviewedCount">0</b> reviewed
             <span class="clear" id="clearFilters">Reset filters</span>
             <span class="clear" id="expandToggle" style="color:var(--gold)">Expand all</span>
           </div>
@@ -528,7 +528,7 @@
             Reset Matrix
           </button>
         </div>
-        <p class="sec-sub">Your performance tracking baseline across core delivery vectors. Practice questions in the voice studio, input your evaluations manually, or click down below to run 100% free offline AI hardware-accelerated grading indexed on a senior 1-10 framework.</p>
+        <p class="sec-sub">Your performance tracking baseline across core delivery vectors. Practice questions in the voice studio, input your evaluations manually, or run 100% free offline AI hardware-accelerated grading indexed on a senior 1-10 framework.</p>
         <div class="matrix-dashboard" id="matrixDashboard"></div>
       </section>
 
@@ -561,7 +561,6 @@
 
       <footer>
         <p><b>PM Interview Playbook</b> &middot; University of Utah, David Eccles School of Business</p>
-        <p style="margin-top:6px">100 questions &middot; 10 frameworks &middot; 8-section battlecard &middot; voice practice studio. Built for Eccles MBA candidates. Practice out loud &mdash; reasoning beats recall.</p>
       </footer>
     </main>
   </div>
@@ -647,9 +646,10 @@
 </div>
 
 <div class="toast" id="toast"><span class="ck">&#10003;</span><span id="toastMsg">Copied</span></div>
+
 <script>
 /* ============================================================
-   PM_QUESTIONS — 100 Product Management interview questions
+   PM_QUESTIONS — 27 Product Management interview questions
    University of Utah — David Eccles School of Business
    ============================================================ */
 const PM_QUESTIONS = [
@@ -700,7 +700,7 @@ const PM_QUESTIONS = [
   question: `Your favorite product is losing relevance with Gen Z. How do you diagnose and respond?`,
   conversational: `I'd resist redesigning anything until I understand the "why." First I'd quantify the decline — is it acquisition, activation, or retention falling, and specifically among under-25 cohorts? Then I'd go qualitative: talk to lapsed and never-adopted Gen Z users to learn what job they're now hiring a competitor for. Often it's not the feature set, it's the cultural fit and where attention has moved. Only then would I decide whether this is a positioning problem, a distribution problem, or a genuine product-market re-fit, because the response differs completely.`,
   deepdive: `Use a structured diagnosis: funnel decomposition (acquisition / activation / retention / referral) by cohort and age segment, paired with churn-reason and competitive-substitution research. Distinguish three root causes: distribution (you're not where their attention is), positioning (the value prop reads as "for older people"), and product (a competitor does the core job better). Each demands a different play — channel strategy, brand and messaging, or core experience investment. Beware the trap of chasing trends that alienate your profitable core; segment your response and consider a separate brand or surface rather than diluting the flagship. Validate with a contained experiment before a full pivot.`,
-  coaching: `Lead with diagnosis, not solutions. Interviewers want to see you isolate root cause across distribution, positioning, and product before spending resources — and that you won't sacrifice a loyal core to chase a new cohort blindly.`,
+  coaching: `Leads with diagnosis, not solutions. Interviewers want to see you isolate root cause across distribution, positioning, and product before spending resources — and that you won't sacrifice a loyal core to chase a new cohort blindly.`,
   redFlag: `Immediately proposing a redesign or "make it more TikTok-like" without diagnosing whether the problem is distribution, positioning, or product — and ignoring the risk to the existing core.`
 },
 {
@@ -718,10 +718,10 @@ const PM_QUESTIONS = [
   category: "Product Sense & Customer Empathy",
   difficulty: "Foundational",
   question: `What's the difference between what users say they want and what they actually need?`,
-  conversational: `I'll use a classic example attributed to Henry Ford — if he had asked customers what they wanted, they would have said "a faster horse." Users are experts in their problems but not always in the solutions. They'll often ask for a specific feature — a faster horse — when the underlying need is "get me there faster." My job is to listen past the requested feature to the job behind it. So I dig into the why: what are they trying to accomplish, what happens if they can't, what are they doing today as a workaround. The workaround is usually the clearest signal of real, unmet need.`,
+  conversational: `Users are experts in their problems but not always in the solutions. They'll often ask for a specific feature — "give me a faster horse" — when the underlying need is "get me there faster." My job is to listen past the requested feature to the job behind it. So I dig into the why: what are they trying to accomplish, what happens if they can't, what are they doing today as a workaround. The workaround is usually the clearest signal of real, unmet need.`,
   deepdive: `This is the classic stated-vs-revealed preference and the "faster horse" problem. The PM's job is to abstract from feature requests to the underlying job-to-be-done, because users optimize within the solution space they can imagine. Methods: ask "why" repeatedly, study workarounds and hacks (high-signal evidence of real pain), and weight behavior over opinion. But don't overcorrect into ignoring users — sometimes they're literally right. The discipline is separating the problem (trust the user) from the solution (trust the data and your design judgment). Validate the inferred need with a small experiment before committing.`,
   coaching: `Use a crisp example — the "faster horse" line or a real one from your experience. Emphasize that you trust users on the problem and the data on the solution. That nuance prevents you from sounding dismissive of customers.`,
-  redFlag: `Either blindly building whatever users request (feature factory) or arrogantly dismissing user input entirely. Both extremes signal weak judgment.`
+  redFlag: `Building blindly whatever users request (feature factory) or arrogantly dismissing user input entirely. Both extremes signal weak judgment.`
 },
 {
   id: 8,
@@ -745,7 +745,7 @@ const PM_QUESTIONS = [
 },
 {
   id: 10,
-  category: "Product Design & User Experience",
+  category: "Product Sense & Customer Empathy",
   difficulty: "Core",
   question: `Pick a product with poor UX and explain how you'd fix it.`,
   conversational: `I'll use most airline booking flows. The core UX failure is that they optimize for upselling over the user's actual job — booking the right flight quickly — so the path is cluttered with interstitial add-on screens and dark patterns. I'd diagnose where users drop or hesitate using funnel and session data, then strip the critical path to its essentials and move ancillary offers to a single, honest review step. The principle is aligning the flow with the user's goal, because in the long run trust drives repeat booking and LTV.`,
@@ -789,7 +789,7 @@ const PM_QUESTIONS = [
   difficulty: "Core",
   question: `How would you decide whether to build for power users or new users?`,
   conversational: `I'd anchor the decision in strategy and the funnel, not preference. If activation and early retention are the bottleneck — lots of signups that never reach value — then investing in the new-user experience has the highest leverage. If the product is mature, growth is plateauing, and power users drive most of the revenue and word-of-mouth, then deepening their workflows protects the core. So I'd look at where the business is constrained and where each segment sits in lifetime value, then sequence accordingly rather than treating it as either/or forever.`,
-  deepdive: `Frame it as a portfolio and sequencing decision tied to the growth model. Diagnose the constraint: if the leaky step is activation, new-user investment compounds; if it's expansion/retention among high-value accounts, power-user depth wins. Quantifying with segment-level retention, LTV, and revenue concentration. The risk of over-serving power users is feature bloat that scares off newcomers (complexity creep); the risk of over-serving new users is a shallow product that can't retain. Mature answer: progressive disclosure can serve both — simple defaults for new users, depth available for power users — and you sequence based on the current binding constraint, revisiting as the funnel shifts.`,
+  deepdive: `Frame it as a portfolio and sequencing decision tied to the growth model. Diagnose the constraint: if the leaky step is activation, new-user investment compounds; if it's expansion/retention among high-value accounts, power-user depth wins. Quantify with segment-level retention, LTV, and revenue concentration. The risk of over-serving power users is feature bloat that scares off newcomers (complexity creep); the risk of over-serving new users is a shallow product that can't retain. Mature answer: progressive disclosure can serve both — simple defaults for new users, depth available for power users — and you sequence based on the current binding constraint, revisiting as the funnel shifts.`,
   coaching: `Refuse the false binary. Tie the choice to where the funnel is constrained and to LTV, and mention progressive disclosure as a way to serve both. That shows strategic prioritization rather than a gut preference.`,
   redFlag: `Picking a side on instinct with no reference to the funnel, LTV, or business stage, or ignoring the complexity-creep risk of over-indexing on power users.`
 },
@@ -841,7 +841,7 @@ const PM_QUESTIONS = [
   conversational: `Product-market fit is the point where you've built something a well-defined market clearly wants — demand pulls the product out of you rather than you pushing it. You feel it operationally: usage and retention grow without heroics, customers refer others, sales gets easier, and you're scrambling to keep up with demand rather than chasing it. Before PMF, every gain feels like pushing a boulder uphill; after, the market starts pulling.`,
   deepdive: `PMF combines a sentiment and a behavioral definition. Marc Andreessen's qualitative version: you can feel it when the market pulls product out of the startup. Quantitatively: a retention curve that flattens at a healthy level for the target segment, strong organic growth, improving unit economics, and Sean Ellis's "40% would be very disappointed" survey. The discipline is defining the specific market segment — PMF is fit between a product and a particular market, not the world. Pre-PMF, focus on iterating toward the curve flattening; post-PMF, shift to scaling and growth loops. Beware false positives from a hot launch or a niche that won't scale.`,
   coaching: `Give both the felt definition (market pulls) and the measurable one (retention flattening, the 40% survey). Specifying that PMF is fit with a defined segment — not everyone — shows precision.`,
-  redFlag: `Defining PMF only by signups, funding, or buzz, or treating it as a permanent milestone rather than fit with a specific market that must be re-earned at scale.`
+  redFlag: `Defining PMF only by signups, funding, or buzz, or treating it as a single permanent milestone rather than fit with a specific market that must be re-earned at scale.`
 },
 {
   id: 20,
@@ -1395,8 +1395,8 @@ const PM_REDFLAGS = [
 
   function render(){
     var list=$("#qlist"); var data=filtered();
-    $("#snQ").textContent = PM_QUESTIONS.length;
-    $("#shownCount").textContent=data.length;
+    $("#statTotalQs").textContent = PM_QUESTIONS.length;
+    $("#shownCount").textContent=data.length + " questions matched";
     updateProgress();
     if(!data.length){
       list.innerHTML='<div class="empty"><div class="big">&#128270;</div><div>No questions match those filters.</div></div>';
@@ -1558,6 +1558,7 @@ const PM_REDFLAGS = [
       if (!localWebLlmEngine) {
         const webllmModule = await import("https://esm.run/@mlc-ai/web-llm");
         
+        // FIXED: Safe property discovery mapping directly into lowercase API handler factory method
         const initEngineFunc = webllmModule.createWebLLMEngine || 
                                (webllmModule.default && webllmModule.default.createWebLLMEngine);
                                
@@ -1569,7 +1570,7 @@ const PM_REDFLAGS = [
         
         localWebLlmEngine = await initEngineFunc(modelIdentifier, {
           initProgressCallback: function(report) {
-            statusIndicator.innerHTML = `⏳ <b>Caching Weights to GPU Memory:</b> ${esc(report.text)}`;
+            statusIndicator.innerHTML = `⏳ <b>Caching Weights to GPU:</b> ${esc(report.text)}`;
           }
         });
       }
