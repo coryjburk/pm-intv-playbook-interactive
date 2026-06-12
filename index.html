@@ -753,6 +753,9 @@ const PM_QUESTIONS = [
 }
 ];
 
+<script>
+
+
 const PM_FRAMEWORKS = [
   {
     id: "circles",
@@ -769,6 +772,132 @@ const PM_FRAMEWORKS = [
       "Summarize your recommendation — state the pick and why, with metrics."
     ],
     tip: "Spend real time on Identify + Report — interviewers reward customer empathy and problem framing more than the feature you land on."
+  },
+  {
+    id: "rice",
+    name: "RICE Scoring",
+    use: "Prioritization questions",
+    summary: "A prioritization score: (Reach × Impact × Confidence) ÷ Effort. Forces you to make value and cost explicit and comparable.",
+    steps: [
+      "Reach — how many users/events per time period are affected.",
+      "Impact — magnitude per user (a multiple, e.g. 3=massive, 1=medium, 0.25=minimal).",
+      "Confidence — % certainty in your Reach/Impact estimates (discounts wishful thinking).",
+      "Effort — person-months (or sprints) of total work across the team.",
+      "Score = (R × I × C) ÷ E — rank items by score, then sanity-check against strategy."
+    ],
+    tip: "Name RICE but say it's a guide, not gospel — strategic fit, dependencies, and table-stakes work override raw score. That nuance is the senior signal."
+  },
+  {
+    id: "northstar",
+    name: "North Star Metric",
+    use: "Metrics, strategy & alignment questions",
+    summary: "A single metric capturing the core value your product delivers to customers, which also predicts long-term business success. Aligns the whole team on one outcome.",
+    steps: [
+      "Identify the core value customers get (the 'aha' / value moment).",
+      "Choose a metric that measures delivery of that value (not vanity volume).",
+      "Verify it's a leading indicator of retention/revenue, not just correlated.",
+      "Decompose into input metrics teams can directly influence.",
+      "Avoid gameable or vanity metrics (raw signups, pageviews)."
+    ],
+    tip: "Good examples: Spotify 'time spent listening', Airbnb 'nights booked', Slack 'messages sent within teams'. Tie the NSM to customer value AND business value to score points."
+  },
+  {
+    id: "aarrr",
+    name: "AARRR (Pirate Metrics)",
+    use: "Growth, funnel & metrics questions",
+    summary: "The lifecycle funnel: Acquisition, Activation, Retention, Referral, Revenue. A map for diagnosing where growth leaks and where to focus.",
+    steps: [
+      "Acquisition — how users find/arrive at the product.",
+      "Activation — first value/'aha' moment; the make-or-break early experience.",
+      "Retention — do users come back? Usually the highest-leverage stage.",
+      "Referral — do users invite others (viral/word-of-mouth loops)?",
+      "Revenue — how the product monetizes the value delivered."
+    ],
+    tip: "When asked to grow a metric or diagnose a drop, walk the funnel to localize the problem before proposing fixes. Stress that retention usually beats top-of-funnel acquisition."
+  },
+  {
+    id: "jtbd",
+    name: "Jobs To Be Done (JTBD)",
+    use: "Customer empathy & product sense questions",
+    summary: "Customers 'hire' a product to make progress on a job in a context. Focus on the underlying job and desired outcome, not demographics or the product itself.",
+    steps: [
+      "Define the job: 'When [situation], I want to [motivation], so I can [outcome].'",
+      "Capture functional, emotional, and social dimensions of the job.",
+      "Identify the desired outcome and how customers measure success.",
+      "Map current alternatives/workarounds they 'hire' today (incl. non-consumption).",
+      "Design to do the job better than the alternatives."
+    ],
+    tip: "The 'milkshake' example: people hired a milkshake for a boring commute, not as dessert. Use JTBD to show you uncover underlying needs, not surface feature requests."
+  },
+  {
+    id: "ost",
+    name: "Opportunity Solution Tree",
+    use: "Discovery, strategy & 'how would you approach this' questions",
+    summary: "Teresa Torres' visual map linking a desired outcome → opportunities (customer needs/pains) → solutions → experiments. Keeps discovery outcome-driven and explicit.",
+    steps: [
+      "Top: the desired outcome (the metric/result you're driving).",
+      "Branch into opportunities — distinct customer needs, pains, desires uncovered in research.",
+      "Under each opportunity, list candidate solutions.",
+      "Under each solution, list experiments/tests to validate it.",
+      "Choose which opportunity to pursue first, then test solutions against it."
+    ],
+    tip: "Reach for this to show continuous-discovery thinking: you connect work to outcomes, explore the opportunity space before solutioning, and validate with experiments."
+  },
+  {
+    id: "cascade",
+    name: "Strategy Cascade",
+    use: "Product strategy questions",
+    summary: "Lafley & Martin's 'Playing to Win' five linked choices that turn aspiration into a coherent, actionable strategy.",
+    steps: [
+      "Winning aspiration — what does winning look like / your purpose?",
+      "Where to play — which markets, segments, channels, geographies.",
+      "How to win — your differentiated value prop / competitive advantage there.",
+      "Capabilities — what you must be great at to win where you play.",
+      "Management systems — the metrics, structures, and processes to sustain it."
+    ],
+    tip: "Use this to structure a strategy answer end-to-end. Emphasize that strategy is a set of integrated CHOICES with explicit tradeoffs — 'where NOT to play' — not a list of goals."
+  },
+  {
+    id: "experiment",
+    name: "Experiment Design (Hypothesis → Test)",
+    use: "Analytics & experimentation questions",
+    summary: "A disciplined structure for designing an A/B test or validation so results are trustworthy and decision-ready.",
+    steps: [
+      "Hypothesis — 'We believe [change] will cause [effect] for [segment] because [reason].'",
+      "Primary metric + guardrail metrics defined upfront (avoid p-hacking).",
+      "Power & sample size — MDE, baseline, traffic → required n and duration.",
+      "Randomization & validity — proper assignment, check sample-ratio mismatch.",
+      "Decision rule — what result ships, iterates, or kills; ship/learn either way."
+    ],
+    tip: "State your hypothesis and success metric BEFORE results, mention statistical significance AND practical significance, and call out guardrails — that's the rigor interviewers probe for."
+  },
+  {
+    id: "stakeholder",
+    name: "Stakeholder Alignment (RACI + Interests)",
+    use: "Stakeholder management & leadership questions",
+    summary: "A two-part approach: map who's involved (RACI) and surface each stakeholder's underlying interests to align them on a shared goal.",
+    steps: [
+      "Map stakeholders: Responsible, Accountable, Consulted, Informed (RACI).",
+      "For each, identify underlying interests/goals, not just stated positions.",
+      "Find or re-anchor on a shared higher-order goal ('us vs. the problem').",
+      "Tailor communication to each audience's altitude and concerns.",
+      "Pre-wire decisions with key dissenters; make tradeoffs transparent."
+    ],
+    tip: "The move that signals seniority: shift from positions to interests, then re-anchor on a shared goal. Mention 'disagree and commit' for the execution phase."
+  },
+  {
+    id: "rootcause",
+    name: "Metric-Drop Root Cause",
+    use: "Analytical / 'metric X dropped Y%, what do you do' questions",
+    summary: "A structured triage for diagnosing a sudden metric change before jumping to fixes. Validate → segment → external vs. internal → funnel.",
+    steps: [
+      "Clarify & validate — exact metric, magnitude, timeframe; rule out tracking/instrumentation bugs first.",
+      "Internal vs. external — recent release/experiment/outage vs. seasonality, competitor, market, PR.",
+      "Segment the drop — by platform, geo, new vs. existing, cohort, channel — to localize it.",
+      "Walk the funnel — which step broke (acquisition → activation → retention)?",
+      "Form hypotheses, prioritize by likelihood, verify with data, then recommend action."
+    ],
+    tip: "Always validate the data and ask clarifying questions FIRST — the most common interview miss is jumping to root causes before confirming the drop is even real."
   }
 ];
 
@@ -779,7 +908,117 @@ const PM_BATTLECARD = [
     icon: "01",
     items: [
       "Outcomes over outputs — ship value/behavior change, not feature count.",
-      "Empowered teams — solve problems, not just deliver a feature roadmap (Cagan)."
+      "Empowered teams — solve problems, not just deliver a feature roadmap (Cagan).",
+      "Continuous discovery — ongoing customer contact, not one-time research (Torres).",
+      "Build-Measure-Learn / MVP — smallest test that validates the riskiest assumption.",
+      "Product trio — PM + design + eng as co-equal partners in discovery & delivery.",
+      "Influence without authority — lead via clarity, credibility, and trust.",
+      "Value, viability, usability, feasibility — the four product risks to address.",
+      "One-way vs. two-way doors — move fast on reversible decisions (Bezos)."
+    ]
+  },
+  {
+    id: "powerphrases",
+    title: "Product Sense Power Phrases",
+    icon: "02",
+    items: [
+      "\"Who's the customer and what job are they hiring this for?\"",
+      "\"Before solutions, let me make sure I understand the problem and the goal.\"",
+      "\"What underlying need is beneath this feature request?\"",
+      "\"I'd validate that assumption cheaply before committing engineering.\"",
+      "\"How does this ladder up to our North Star and the business outcome?\"",
+      "\"What are we explicitly choosing NOT to do, and why?\"",
+      "\"Let me state my hypothesis and how I'd measure success.\"",
+      "\"I'd treat that as a reversible bet, instrument it, and learn.\""
+    ]
+  },
+  {
+    id: "metrics",
+    title: "Metrics to Know Cold",
+    icon: "03",
+    items: [
+      "North Star Metric — single measure of core customer value.",
+      "AARRR funnel — Acquisition, Activation, Retention, Referral, Revenue.",
+      "Retention & churn — cohort retention curves; the flattening = product-market fit signal.",
+      "DAU/MAU stickiness ratio — engagement frequency.",
+      "Activation rate — % reaching the first value/'aha' moment.",
+      "LTV and CAC — unit economics; LTV:CAC > ~3 is a common health bar.",
+      "Conversion rate by funnel step; NPS / CSAT for satisfaction.",
+      "Leading vs. lagging indicators — inputs you can move vs. outcomes you report."
+    ]
+  },
+  {
+    id: "prioritization",
+    title: "Prioritization Principles",
+    icon: "04",
+    items: [
+      "Tie every item to strategy and a desired outcome — not loudest-voice or HiPPO.",
+      "RICE / value-vs-effort to compare, but treat scores as a guide, not an oracle.",
+      "Distinguish must-do table-stakes/compliance from discretionary bets.",
+      "Account for dependencies, sequencing, and tech-debt cost of delay.",
+      "Say no by reference to shared criteria — make the tradeoff visible.",
+      "Smallest valuable slice first; defer the rest to fast-follows.",
+      "Revisit priorities as you learn — prioritization is continuous, not annual."
+    ]
+  },
+  {
+    id: "mistakes",
+    title: "Common PM Interview Mistakes",
+    icon: "05",
+    items: [
+      "Jumping to solutions before clarifying the problem, customer, and goal.",
+      "Ignoring the customer / no empathy — listing features with no 'who & why'.",
+      "Vanity metrics or no metric to define & measure success.",
+      "Prioritizing with no framework or rationale ('I'd just build the important ones').",
+      "Strategy with no tradeoffs — a wish-list, not a set of choices.",
+      "Rambling with no structure — not using a framework to organize the answer.",
+      "Behavioral answers with no STAR structure, no 'I', or no measurable result.",
+      "Generic 'why this company' with no research or product-specific insight."
+    ]
+  },
+  {
+    id: "signals",
+    title: "Strong Candidate Signals",
+    icon: "06",
+    items: [
+      "Clarifies and frames the problem before solutioning.",
+      "Leads with the customer and the underlying job/need.",
+      "Structures answers (CIRCLES, funnel, strategy cascade) without sounding robotic.",
+      "Quantifies — defines success metrics and the size of the prize.",
+      "Reasons about tradeoffs explicitly, including what NOT to do.",
+      "Treats beliefs as hypotheses to validate; comfortable with ambiguity.",
+      "Shows influence-without-authority and genuine cross-functional partnership.",
+      "Owns outcomes and decisions; reflects and learns from failure."
+    ]
+  },
+  {
+    id: "differentiators",
+    title: "Final-Round Differentiators",
+    icon: "07",
+    items: [
+      "Counterintuitive judgment — e.g., choosing NOT to build a popular feature.",
+      "Connects product decisions to business strategy and unit economics fluently.",
+      "Brings an informed, specific point of view about THIS company's product.",
+      "Demonstrates discovery rigor: opportunity space → solutions → experiments.",
+      "Handles ambiguity with a calm, explicit reasoning process under pressure.",
+      "Tells crisp STAR stories with conflict, your specific actions, and metrics.",
+      "Shows leadership maturity: disagree-and-commit, change management, EQ.",
+      "Asks sharp, curious questions that reveal genuine product thinking."
+    ]
+  },
+  {
+    id: "lastminute",
+    title: "Last-Minute Review",
+    icon: "08",
+    items: [
+      "Breathe. Clarify first, structure always, customer + metric in every answer.",
+      "Have 3-4 STAR stories ready, flexible enough to fit failure/conflict/influence/impact.",
+      "Pre-pick a product you can analyze deeply for 'product you admire'.",
+      "Research the company's product, mission, stage — form one real opinion/idea.",
+      "Memorize the funnel (AARRR) and your go-to prioritization framework (RICE).",
+      "Prepare 'why PM', 'why here', 'greatest strength', 'area to improve' authentically.",
+      "Think out loud — interviewers grade your reasoning, not just the answer.",
+      "Prepare 2-3 thoughtful questions to ask them. Be genuinely curious."
     ]
   }
 ];
@@ -790,14 +1029,105 @@ const PM_REDFLAGS = [
     title: "Weak Product Sense",
     signals: [
       "Jumps straight to features/solutions without defining the problem or goal.",
-      "Can't articulate who the customer is or what job they're hiring the product for."
+      "Can't articulate who the customer is or what job they're hiring the product for.",
+      "Describes products only by features, never by the underlying value or insight."
     ],
     fix: "Always start with the customer and the problem. Use CIRCLES/JTBD to frame before you solve. State the goal and success metric before naming a single feature."
+  },
+  {
+    id: "pooremphathy",
+    title: "Poor Customer Empathy",
+    signals: [
+      "Designs for themselves or 'everyone' rather than a specific segment.",
+      "Takes feature requests literally without probing the underlying need.",
+      "No mention of talking to users, research, or evidence of customer contact."
+    ],
+    fix: "Name a specific persona and their job-to-be-done. Treat requests as clues to a deeper need. Reference how you'd learn from real customers (interviews, observation)."
+  },
+  {
+    id: "metricconfusion",
+    title: "Metric Confusion",
+    signals: [
+      "Picks vanity metrics (raw signups, pageviews) as success measures.",
+      "Confuses leading vs. lagging indicators, or correlation with causation.",
+      "Can't define how they'd measure success for a feature or product."
+    ],
+    fix: "Tie success to a North Star reflecting customer value; decompose into movable input metrics. Distinguish leading/lagging, and pair primary metrics with guardrails."
+  },
+  {
+    id: "vagueprioritization",
+    title: "Vague Prioritization",
+    signals: [
+      "'I'd build the most important ones' with no criteria or framework.",
+      "Prioritizes by loudest stakeholder / HiPPO rather than impact and strategy.",
+      "Ignores effort, dependencies, and cost of delay."
+    ],
+    fix: "Use an explicit framework (RICE, value-vs-effort) tied to strategy, but show judgment beyond the score. Make tradeoffs visible: yes to this = later for that."
+  },
+  {
+    id: "strategynotradeoffs",
+    title: "Strategy Without Tradeoffs",
+    signals: [
+      "Presents a wish-list of goals as a 'strategy'.",
+      "Can't say where NOT to play or what they'd sacrifice.",
+      "No coherent 'how to win' / differentiation."
+    ],
+    fix: "Frame strategy as integrated choices (Strategy Cascade): where to play, how to win, and explicitly what you're choosing not to do. Tradeoffs are the strategy."
+  },
+  {
+    id: "overbuilding",
+    title: "Overbuilding / Feature Factory",
+    signals: [
+      "Measures success by features shipped, not outcomes achieved.",
+      "Says yes to every request; builds big before validating demand.",
+      "No instinct to test cheaply or to kill low-value work."
+    ],
+    fix: "Anchor on outcomes over outputs. Validate the riskiest assumption with the smallest test (MVP). Be willing to say no and to kill features that don't earn their keep."
+  },
+  {
+    id: "weakcrossfunctional",
+    title: "Weak Cross-Functional Leadership",
+    signals: [
+      "Describes a waterfall handoff: writes a spec and 'throws it over the wall'.",
+      "Positions self as the boss who assigns work to design/eng.",
+      "Resolves conflict by escalating or pulling rank rather than aligning."
+    ],
+    fix: "Show the product-trio model: co-create with design & eng early, bring problems not solutions. Influence via evidence and shared goals; escalation is a last resort."
+  },
+  {
+    id: "shallowbusiness",
+    title: "Shallow Business Understanding",
+    signals: [
+      "Can't connect product decisions to revenue, costs, or business model.",
+      "Unfamiliar with basic unit economics (LTV, CAC, margins).",
+      "Treats product as separate from the business it serves."
+    ],
+    fix: "Connect customer value to business value in every answer. Know the business model and unit economics. Frame impact in terms the company's leadership cares about."
+  },
+  {
+    id: "poorcommunication",
+    title: "Poor Communication Structure",
+    signals: [
+      "Rambles; no clear structure or signposting in answers.",
+      "Buries the recommendation; can't summarize crisply.",
+      "Behavioral answers wander with no STAR arc or clear 'I did X'."
+    ],
+    fix: "Signpost and structure (frameworks, STAR). Lead with the headline/recommendation, then support it. Think out loud but stay organized — clarity is a core PM skill."
+  },
+  {
+    id: "behavioralweakness",
+    title: "Behavioral Weaknesses",
+    signals: [
+      "Humblebrag 'weaknesses' ('I'm a perfectionist'); fake or trivial failures.",
+      "Blames others; casts self as blameless hero in conflict stories.",
+      "No self-reflection, no lesson learned, no measurable result in stories."
+    ],
+    fix: "Use STAR with a real 'I', genuine accountability, and a concrete lesson you later applied. Describe others fairly. Quantify results. Authentic self-awareness beats a polished myth."
   }
 ];
 
 /* ============================================================
-   APP LOGIC — PM Interview Playbook Engine
+   APPLICATION CORE INTERACTION SUITE
    ============================================================ */
 (function(){
   "use strict";
@@ -807,7 +1137,7 @@ const PM_REDFLAGS = [
   
   var reviewed = {};
   var matrixScores = {};
-  var localWebLlmEngine = null; // Local GPU context anchor mapping variables
+  var localWebLlmEngine = null;
   
   try { reviewed = JSON.parse(localStorage.getItem(STORE_KEY) || "{}") || {}; } catch(e){ reviewed = {}; }
   try { matrixScores = JSON.parse(localStorage.getItem(MATRIX_KEY) || "{}") || {}; } catch(e){ matrixScores = {}; }
@@ -830,7 +1160,6 @@ const PM_REDFLAGS = [
 
   var state = { cat:"All", diff:"All", search:"", expandedAll:false };
 
-  var $ = function(s,el){ return (el||document).querySelector(s); };
   var $ = function(s,el){ return (el||document).querySelector(s); };
   var $$ = function(s,el){ return Array.prototype.slice.call((el||document).querySelectorAll(s)); };
   function esc(str){ return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
@@ -946,9 +1275,10 @@ const PM_REDFLAGS = [
     if(state.expandedAll){ $$(".qexpand",list).forEach(function(e){ e.style.maxHeight=e.scrollHeight+"px"; }); }
   }
 
-  /* ---------- Dynamic Competency Matrix Dashboard ---------- */
+  /* ---------- Dynamic Competency Matrix Dashboard (Scale 1-10) ---------- */
   function renderMatrixDashboard() {
     var dashboard = $("#matrixDashboard");
+    if (!dashboard) return;
     var totals = {};
     DIMENSIONS.forEach(function(d) { totals[d] = { sum: 0, count: 0 }; });
     
@@ -966,14 +1296,14 @@ const PM_REDFLAGS = [
     dashboard.innerHTML = DIMENSIONS.map(function(d) {
       var data = totals[d];
       var avg = data.count > 0 ? (data.sum / data.count) : 0;
-      var pct = (avg / 5) * 100;
+      var pct = (avg / 10) * 100;
       
       var tierClass = "tier-low";
       var tierText = "Diagnostic Gap";
-      if (avg >= 4.0) {
+      if (avg >= 8.0) {
         tierClass = "tier-high";
         tierText = "Senior Master";
-      } else if (avg >= 2.5) {
+      } else if (avg >= 5.0) {
         tierClass = "tier-mid";
         tierText = "On Track";
       } else if (data.count === 0) {
@@ -994,22 +1324,23 @@ const PM_REDFLAGS = [
         '</div>'+
         '<div class="matrix-footer">'+
           '<span>Scale Progress</span>'+
-          '<span class="matrix-score-val">'+(avg > 0 ? avg.toFixed(1) : "0.0")+' <span style="font-size:11px; color:var(--text-faint)">/ 5.0</span></span>'+
+          '<span class="matrix-score-val">'+(avg > 0 ? avg.toFixed(1) : "0.0")+' <span style="font-size:11px; color:var(--text-faint)">/ 10.0</span></span>'+
         '</div>'+
       '</div>';
     }).join("");
   }
 
-  /* ---------- Build Modal Interactivity Grading Selection Rows ---------- */
+  /* ---------- Build Modal Interactivity Grading Selection Rows (Scale 1-10) ---------- */
   function buildModalGradingInterface(qId) {
     var container = $("#gradingRowsContainer");
+    if (!container) return;
     var dataObj = matrixScores[qId] || {};
     var currentSavedScores = dataObj.scores || dataObj;
 
     container.innerHTML = DIMENSIONS.map(function(d) {
       var activeScore = currentSavedScores[d] || 0;
       
-      var buttonsHtml = [1, 2, 3, 4, 5].map(function(val) {
+      var buttonsHtml = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(function(val) {
         var isSelected = activeScore === val ? " selected" : "";
         return '<button class="grading-pill'+isSelected+'" data-dim="'+esc(d)+'" data-val="'+val+'">'+val+'</button>';
       }).join("");
@@ -1041,7 +1372,6 @@ const PM_REDFLAGS = [
       return;
     }
 
-    // Hardware compatibility sanity check check
     if (!navigator.gpu) {
       alert("WebGPU Acceleration is not detected or supported on this browser. To use free local AI grading, please open this app in a modern version of Google Chrome, Microsoft Edge, or Arc.");
       return;
@@ -1055,14 +1385,22 @@ const PM_REDFLAGS = [
     statusIndicator.innerHTML = '⚙️ Loading dynamic core engine binaries into sandboxed local cache memory...';
 
     try {
-      // Dynamic loading hook to avoid fetching huge bundles upfront until required
       if (!localWebLlmEngine) {
+        // Fetch library bundle asynchronously via CDN
         const webllmModule = await import("https://esm.run/@mlc-ai/web-llm");
         
-        // Premium lightweight model selection offering low weight-sizes with excellent zero-shot parsing capabilities
+        // FIXED: Safely resolve namespace parsing structure across different browser engines
+        const initEngineFunc = webllmModule.createWebLLMEngine || 
+                               (webllmModule.default && webllmModule.default.createWebLLMEngine);
+                               
+        if (!initEngineFunc) {
+          throw new Error("Could not map initialization hooks inside CDN runtime library context wrapper.");
+        }
+        
+        // Optimized 1.5B parameters (~1.2GB weight size) layout choice
         const modelIdentifier = "Qwen2.5-1.5B-Instruct-q4f16_1-MLC"; 
         
-        localWebLlmEngine = await webllmModule.CreateWebLLMEngine(modelIdentifier, {
+        localWebLlmEngine = await initEngineFunc(modelIdentifier, {
           initProgressCallback: function(report) {
             statusIndicator.innerHTML = `⏳ <b>Caching Weights to GPU Memory:</b> ${esc(report.text)}`;
           }
@@ -1072,22 +1410,22 @@ const PM_REDFLAGS = [
       statusIndicator.innerHTML = '🧠 <b>Local Execution:</b> Compiling response linguistics against business school metrics...';
 
       var promptSystem = "You are an expert product management executive and coach evaluating an MBA candidate's mock interview performance. " +
-        "Analyze the question and user response. You MUST respond exclusively with a valid JSON block containing numeric grades (1 to 5) and discrete feedback attributes matching the defined schema layout. Do not write markdown blocks or standard conversational wrappers outside the JSON string data structure.";
+        "Analyze the question and user response. You MUST respond exclusively with a valid JSON block containing numeric grades (1 to 10) and discrete feedback attributes matching the defined schema layout. Do not write markdown blocks or standard conversational wrappers outside the JSON string data structure.";
 
       var promptUser = "INTERVIEW QUESTION TYPE CATEGORY: " + curQ.category + "\n" +
         "DIFFICULTY SCALING LEVEL: " + curQ.difficulty + "\n" +
         "TARGET PROBLEM STATED: \"" + curQ.question + "\"\n\n" +
         "THE TRANSCRIPTION DEPLOYED BY USER:\n\"" + transcriptText + "\"\n\n" +
         "CRITERIA RUBRIC EXPECTATIONS:\n" + curQ.deepdive + "\n" + curQ.coaching + "\n\n" +
-        "Return a strict JSON object mapping format exactly matching this layout blueprint:\n" +
+        "Return a strict JSON object mapping format exactly matching this layout blueprint (scores from 1 to 10):\n" +
         "{\n" +
         "  \"scores\": {\n" +
-        "    \"Problem Framing\": 3,\n" +
-        "    \"Customer Empathy\": 4,\n" +
-        "    \"Structure & Frameworks\": 2,\n" +
-        "    \"Metrics\": 5,\n" +
-        "    \"Prioritization\": 4,\n" +
-        "    \"Communication\": 3\n" +
+        "    \"Problem Framing\": 6,\n" +
+        "    \"Customer Empathy\": 8,\n" +
+        "    \"Structure & Frameworks\": 5,\n" +
+        "    \"Metrics\": 9,\n" +
+        "    \"Prioritization\": 7,\n" +
+        "    \"Communication\": 6\n" +
         "  },\n" +
         "  \"strengths\": \"Provide a summary bulleted brief detailing delivery wins.\",\n" +
         "  \"gaps\": \"Detail specific gaps or missing tactical assumptions.\",\n" +
@@ -1103,8 +1441,6 @@ const PM_REDFLAGS = [
       });
 
       var rawResultText = chatCompletionObj.choices[0].message.content;
-      
-      // Clean accidental markdown wrappers standard for some LLM text pipelines
       rawResultText = rawResultText.replace(/```json/g, "").replace(/```/g, "").trim();
       
       var structuredPayload = JSON.parse(rawResultText);
@@ -1123,7 +1459,7 @@ const PM_REDFLAGS = [
 
       DIMENSIONS.forEach(function(d) {
          var sVal = parseInt(structuredPayload.scores[d], 10);
-         matrixScores[qId].scores[d] = (!isNaN(sVal) && sVal >= 1 && sVal <= 5) ? sVal : 1;
+         matrixScores[qId].scores[d] = (!isNaN(sVal) && sVal >= 1 && sVal <= 10) ? sVal : 1;
       });
 
       saveMatrixScores();
@@ -1140,7 +1476,8 @@ const PM_REDFLAGS = [
     }
   }
 
-  $("#runAutomatedAiBtn").onclick = executeLiveAiGrading;
+  var autBtn = $("#runAutomatedAiBtn");
+  if (autBtn) autBtn.onclick = executeLiveAiGrading;
 
   /* ---------- Question card interactions (delegated) ---------- */
   document.addEventListener("click",function(ev){
@@ -1210,40 +1547,54 @@ const PM_REDFLAGS = [
   });
 
   /* ---------- Global Reset Action Engine Handler ---------- */
-  $("#resetMatrix").onclick = function() {
-    if (confirm("Are you sure you want to completely wipe all current competency grades? This will clear out your diagnostic baseline visualization curves.")) {
-      matrixScores = {};
-      saveMatrixScores();
-      renderMatrixDashboard();
-      if (curQ && $("#overlay").classList.contains("show")) {
-        buildModalGradingInterface(curQ.id);
+  var rstMat = $("#resetMatrix");
+  if (rstMat) {
+    rstMat.onclick = function() {
+      if (confirm("Are you sure you want to completely wipe all current competency grades? This will clear out your diagnostic baseline visualization curves.")) {
+        matrixScores = {};
+        saveMatrixScores();
+        renderMatrixDashboard();
+        if (curQ && $("#overlay").classList.contains("show")) {
+          buildModalGradingInterface(curQ.id);
+        }
+        toast("Competency matrix wiped clean");
       }
-      toast("Competency matrix wiped clean");
-    }
-  };
+    };
+  }
 
   /* ---------- Search & filter controls ---------- */
   var searchEl=$("#search"); var searchTm;
-  searchEl.addEventListener("input",function(){ clearTimeout(searchTm); searchTm=setTimeout(function(){ state.search=searchEl.value; render(); },140); });
-  $("#clearFilters").onclick=function(){ state.cat="All"; state.diff="All"; state.search=""; searchEl.value=""; refreshPills(); render(); };
-  $("#expandToggle").onclick=function(){
-    state.expandedAll=!state.expandedAll;
-    $("#expandToggle").textContent=state.expandedAll?"Collapse all":"Expand all";
-    render();
-  };
+  if (searchEl) {
+    searchEl.addEventListener("input",function(){ clearTimeout(searchTm); searchTm=setTimeout(function(){ state.search=searchEl.value; render(); },140); });
+  }
+  var clrFilt = $("#clearFilters");
+  if (clrFilt) {
+    clrFilt.onclick=function(){ state.cat="All"; state.diff="All"; state.search=""; if(searchEl) searchEl.value=""; refreshPills(); render(); };
+  }
+  var expTog = $("#expandToggle");
+  if (expTog) {
+    expTog.onclick=function(){
+      state.expandedAll=!state.expandedAll;
+      $("#expandToggle").textContent=state.expandedAll?"Collapse all":"Expand all";
+      render();
+    };
+  }
 
   function updateProgress(){
     var total=PM_QUESTIONS.length;
     var n=Object.keys(reviewed).filter(function(k){return reviewed[k];}).length;
     var pct=Math.round(n/total*100);
-    $("#reviewedCount").textContent=n;
+    var sc = $("#shownCount"); if(sc) sc.textContent=data.length; // safe boundary fallback map
+    var rc = $("#reviewedCount"); if(rc) rc.textContent=n;
     var pt=$("#progText"); if(pt) pt.textContent=n+" reviewed";
     var pp=$("#progPct"); if(pp) pp.textContent=pct+"%";
   }
 
   /* ---------- Frameworks ---------- */
   function renderFrameworks(){
-    $("#fwGrid").innerHTML=PM_FRAMEWORKS.map(function(f){
+    var fwG = $("#fwGrid");
+    if (!fwG) return;
+    fwG.innerHTML=PM_FRAMEWORKS.map(function(f){
       return ''+
       '<div class="fw">'+
         '<div class="fw-name">'+esc(f.name)+'</div>'+
@@ -1257,7 +1608,9 @@ const PM_REDFLAGS = [
 
   /* ---------- Battlecard ---------- */
   function renderBattlecard(){
-    $("#bcGrid").innerHTML=PM_BATTLECARD.map(function(b){
+    var bcG = $("#bcGrid");
+    if (!bcG) return;
+    bcG.innerHTML=PM_BATTLECARD.map(function(b){
       return ''+
       '<div class="bc">'+
         '<div class="bc-head"><div class="bc-ico">'+esc(b.icon)+'</div><h3>'+esc(b.title)+'</h3></div>'+
@@ -1268,7 +1621,9 @@ const PM_REDFLAGS = [
 
   /* ---------- Red flags ---------- */
   function renderRedFlags(){
-    $("#rfGrid").innerHTML=PM_REDFLAGS.map(function(r){
+    var rfG = $("#rfGrid");
+    if (!rfG) return;
+    rfG.innerHTML=PM_REDFLAGS.map(function(r){
       return ''+
       '<div class="rf">'+
         '<div class="rf-top"><h3><span class="warn">&#9873;</span>'+esc(r.title)+'</h3></div>'+
@@ -1319,7 +1674,8 @@ const PM_REDFLAGS = [
     $("#overlay").classList.remove("show");
     document.body.style.overflow="";
   }
-  $("#prClose").onclick=closePractice;
+  var prCls = $("#prClose");
+  if (prCls) prCls.onclick=closePractice;
   $("#overlay").addEventListener("click",function(e){ if(e.target===$("#overlay")) closePractice(); });
   document.addEventListener("keydown",function(e){ if(e.key==="Escape" && $("#overlay").classList.contains("show")) closePractice(); });
 
@@ -1358,7 +1714,8 @@ const PM_REDFLAGS = [
     $("#recLabel").textContent="Resume";
     interimText=""; renderTranscript(); updatePracticeStats(); buildPracticeAiPrompt();
   }
-  $("#recBtn").onclick=function(){ if(recording) stopRec(); else startRec(); };
+  var rBtn = $("#recBtn");
+  if (rBtn) rBtn.onclick=function(){ if(recording) stopRec(); else startRec(); };
 
   function analyzeFillers(text){
     var lower=" "+text.toLowerCase().replace(/[.,!?;:]/g," ")+" ";
@@ -1415,14 +1772,17 @@ const PM_REDFLAGS = [
     }
   }
 
-  $("#revealTabs").addEventListener("click",function(e){
-    var b=e.target.closest(".tab"); if(!b) return;
-    $$("#revealTabs .tab").forEach(function(t){t.classList.remove("active");});
-    b.classList.add("active");
-    var r=b.dataset.r;
-    $$(".reveal-pane").forEach(function(p){p.classList.remove("active");});
-    $("#rp-"+r).classList.add("active");
-  });
+  var revTabs = $("#revealTabs");
+  if (revTabs) {
+    revTabs.addEventListener("click",function(e){
+      var b=e.target.closest(".tab"); if(!b) return;
+      $$("#revealTabs .tab").forEach(function(t){t.classList.remove("active");});
+      b.classList.add("active");
+      var r=b.dataset.r;
+      $$(".reveal-pane").forEach(function(p){p.classList.remove("active");});
+      $("#rp-"+r).classList.add("active");
+    });
+  }
 
   function buildPracticeAiPrompt(){
     if(!curQ) return;
@@ -1433,15 +1793,17 @@ const PM_REDFLAGS = [
       "HOW TO SCORE POINTS:\n"+curQ.coaching+"\n\n"+
       "RED FLAGS TO AVOID:\n"+curQ.redFlag+"\n\n"+
       (ans
-        ? "HERE IS MY ACTUAL SPOKEN ANSWER (transcribed):\n\""+ans+"\"\n\nPlease evaluate my performance strictly against the 6 dimensions of the standard core interview scorecard: (1) Problem Framing, (2) Customer Empathy, (3) Structure & Frameworks, (4) Metrics, (5) Prioritization, and (6) Communication. For each dimension, provide a clear score from 1 (Critical Gap) to 5 (Senior Master) along with justification. Then, summarize with a score out of 10, name the 2-3 strongest elements, highlight what to fix, and show me a tightened model response script."
+        ? "HERE IS MY ACTUAL SPOKEN ANSWER (transcribed):\n\""+ans+"\"\n\nPlease evaluate my performance strictly against the 6 dimensions of the standard core interview scorecard: (1) Problem Framing, (2) Customer Empathy, (3) Structure & Frameworks, (4) Metrics, (5) Prioritization, and (6) Communication. For each dimension, provide a clear score from 1 (Critical Gap) to 10 (Senior Master) along with justification. Then, summarize with a score out of 10, name the 2-3 strongest elements, highlight what to fix, and show me a tightened model response script."
         : "I'm about to answer this out loud. Please act as the interviewer: ask me the question, let me respond, then give me direct, specific feedback scored out of 10, including what to fix and any red flags. Ask one sharp follow-up afterward.");
     $("#prAiPrompt").textContent=p;
   }
-  $("#prAiCopy").onclick=function(){ buildPracticeAiPrompt(); copy($("#prAiPrompt").textContent); };
+  var prCpy = $("#prAiCopy");
+  if (prCpy) prCpy.onclick=function(){ buildPracticeAiPrompt(); copy($("#prAiPrompt").textContent); };
 
   /* ---------- AI Coach generator (section) ---------- */
   function buildCoachOptions(){
     var sel=$("#cgCat");
+    if (!sel) return;
     var opt=document.createElement("option"); opt.value="All"; opt.textContent="Any category (mixed)"; sel.appendChild(opt);
     CATEGORIES.forEach(function(c){ var o=document.createElement("option"); o.value=c; o.textContent=c; sel.appendChild(o); });
     sel.onchange=buildCoachPrompt; $("#cgMode").onchange=buildCoachPrompt;
@@ -1460,12 +1822,13 @@ const PM_REDFLAGS = [
     } else if(mode==="drill"){
       body="Drill me rapid-fire. Ask me a question, and no matter how I answer, hit me with 2-3 escalating follow-ups that pressure-test my reasoning (\"why that metric?\", \"what's the tradeoff?\", \"how would you measure success?\", \"what would change your mind?\"). Keep me on my toes. Track which areas I'm weak in and tell me at the end. Begin now.";
     } else {
-      body="Score my answers against a clear rubric. For each question, evaluate me on: (1) Problem Framing, (2) Customer Empathy, (3) Structure & Frameworks, (4) Metrics, (5) Prioritization, and (6) Communication. Give 1-5 per dimension with one sentence of justification, then an overall verdict out of 10. Ask me the first question and we'll go one at a time.";
+      body="Score my answers against a clear rubric. For each question, evaluate me on: (1) Problem Framing, (2) Customer Empathy, (3) Structure & Frameworks, (4) Metrics, (5) Prioritization, and (6) Communication. Give 1-10 per dimension with one sentence of justification, then an overall verdict out of 10. Ask me the first question and we'll go one at a time.";
     }
     var qs = sampleQs ? "\n\nSAMPLE QUESTIONS YOU CAN DRAW FROM:\n"+sampleQs : "";
     $("#cgPrompt").textContent=intro+body+qs;
   }
-  $("#cgCopy").onclick=function(){ copy($("#cgPrompt").textContent); };
+  var cgCpy = $("#cgCopy");
+  if (cgCpy) cgCpy.onclick=function(){ copy($("#cgPrompt").textContent); };
 
   /* ---------- Nav: scroll spy ---------- */
   var sections=["questions","frameworks","battlecard","redflags","matrix","coach"];
@@ -1475,7 +1838,8 @@ const PM_REDFLAGS = [
     $$("[data-nav]").forEach(function(a){ a.classList.toggle("active", a.dataset.nav===cur); });
   }
   window.addEventListener("scroll",onScroll,{passive:true});
-  $("#menuBtn").onclick=function(){ $("#mobileNav").classList.toggle("show"); };
+  var mBtn = $("#menuBtn");
+  if (mBtn) mBtn.onclick=function(){ $("#mobileNav").classList.toggle("show"); };
   $$("#mobileNav a").forEach(function(a){ a.onclick=function(){ $("#mobileNav").classList.remove("show"); }; });
 
   /* ---------- Init ---------- */
